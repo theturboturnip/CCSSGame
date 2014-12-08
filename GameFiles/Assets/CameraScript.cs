@@ -2,19 +2,22 @@
 using System.Collections;
 
 public class CameraScript : MonoBehaviour {
-	AudioListener listener;
+    public Camera FirstPerson,TopDown;
 	// Use this for initialization
 	void Start () {
-		listener = gameObject.GetComponents<AudioListener> ()[0];
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		GameObject mainCamera = GameObject.FindGameObjectWithTag("MainCamera");
-		if(mainCamera==gameObject){
-			listener.enabled=true;
-		}else{
-			listener.enabled=false;
-		}
+         if(Input.GetKeyDown(KeyCode.P)){
+             TopDown.enabled=!TopDown.enabled;
+             FirstPerson.enabled=!FirstPerson.enabled;
+         }       
+         if(TopDown.enabled){                 
+             Vector3 topdownrot=TopDown.transform.rotation.eulerAngles;
+             topdownrot.y=0;
+             topdownrot.z=0;
+             TopDown.transform.rotation=Quaternion.Euler(topdownrot);
+         }
 	}
 }
