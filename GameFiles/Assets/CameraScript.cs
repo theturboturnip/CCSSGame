@@ -18,6 +18,7 @@ public class CameraScript : MonoBehaviour {
              topdownrot.y=0;
              topdownrot.z=0;
              TopDown.transform.rotation=Quaternion.Euler(topdownrot);
+             //TopDown.gameObject.transform.position=new Vector3(0,10,0);
          }
 	}
 }
