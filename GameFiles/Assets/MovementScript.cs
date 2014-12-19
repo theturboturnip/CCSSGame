@@ -5,6 +5,7 @@ public class MovementScript : MonoBehaviour {
     public Transform model,bullet;
     public Vector3 bossLocation=Vector3.zero;
     public float cameraSpeed,playerSpeed;
+    float bulletTicks,bulletTickLimit=10;
 	// Use this for initialization
 	void Start () {
 	
@@ -14,15 +15,20 @@ public class MovementScript : MonoBehaviour {
 	void Update () {
 	     transform.position=Vector3.MoveTowards(transform.position,bossLocation,cameraSpeed*Time.deltaTime);
          Vector3 mouseWorldPos=Input.mousePosition;
-         mouseWorldPos.z=12;
-         mouseWorldPos=Camera.main.ScreenToWorldPoint(mouseWorldPos);
-         model.LookAt(mouseWorldPos);
+         model.LookAt(ScreenToWorldPoint(mouseWorldPos));
          Vector3 movementVector=new Vector3(Input.GetAxis("Horizontal"),0,Input.GetAxis("Vertical"));
-         print(movementVector);
          model.position+=movementVector*playerSpeed*Time.deltaTime;
-         if(Input.GetMouseButton(0)){
-            Instantiate(bullet,model.position,model.rotation);
+         if(Input.GetMouseButton(0)&&bulletTicks>=bulletTickLimit){
+            Instantiate(bullet,model.position+model.TransformDirection(Vector3.forward)*1.5f,model.rotation);
+            bulletTicks=0;
          }
+         bulletTicks++;
     }
-    
+    Vector3 ScreenToWorldPoint(Vector3 pos){
+         pos.z=12;
+         return Camera.main.ScreenToWorldPoint(pos);
+    }
+    Vector3 WorldToScreenPoint(Vector3 pos){
+         return Camera.main.WorldToScreenPoint(pos);
+    }
 }
