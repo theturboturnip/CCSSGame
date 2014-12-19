@@ -287,7 +287,8 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5400000, guid: 1399524e444d5ff40b9d6e8122f6ec0d, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 1399524e444d5ff40b9d6e8122f6ec0d, type: 2}
   m_RootGameObject: {fileID: 859583688}
   m_IsPrefabParent: 0
@@ -581,10 +582,10 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 859583690}
+  - 114: {fileID: 859583689}
   - 114: {fileID: 859583693}
   - 81: {fileID: 859583694}
   - 54: {fileID: 859583691}
-  - 114: {fileID: 859583689}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -605,7 +606,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CameraRelative: 0
-  MoveSpeed: 5
+  MoveSpeed: 3
   Bullet: {fileID: 400002, guid: 73e24630e1e57594b849cf9fc5a5b6bf, type: 2}
 --- !u!4 &859583690
 Transform:
@@ -626,18 +627,17 @@ Transform:
 --- !u!54 &859583691
 Rigidbody:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 5400002, guid: 1399524e444d5ff40b9d6e8122f6ec0d,
-    type: 2}
-  m_PrefabInternal: {fileID: 303872945}
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 859583688}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 2
+  m_Drag: 0
   m_AngularDrag: .0500000007
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 80
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!114 &859583693
 MonoBehaviour:
@@ -755,81 +755,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1367707706}
   - {fileID: 1471042050}
   m_Father: {fileID: 859583690}
-  m_RootOrder: 0
---- !u!1 &1367707702
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 100012, guid: 1399524e444d5ff40b9d6e8122f6ec0d, type: 2}
-  m_PrefabInternal: {fileID: 303872945}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1367707706}
-  - 33: {fileID: 1367707705}
-  - 65: {fileID: 1367707704}
-  - 23: {fileID: 1367707703}
-  m_Layer: 0
-  m_Name: Cube
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!23 &1367707703
-Renderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 2300002, guid: 1399524e444d5ff40b9d6e8122f6ec0d,
-    type: 2}
-  m_PrefabInternal: {fileID: 303872945}
-  m_GameObject: {fileID: 1367707702}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
-  m_Materials:
-  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
---- !u!65 &1367707704
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 6500002, guid: 1399524e444d5ff40b9d6e8122f6ec0d,
-    type: 2}
-  m_PrefabInternal: {fileID: 303872945}
-  m_GameObject: {fileID: 1367707702}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!33 &1367707705
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 3300002, guid: 1399524e444d5ff40b9d6e8122f6ec0d,
-    type: 2}
-  m_PrefabInternal: {fileID: 303872945}
-  m_GameObject: {fileID: 1367707702}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &1367707706
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 400012, guid: 1399524e444d5ff40b9d6e8122f6ec0d, type: 2}
-  m_PrefabInternal: {fileID: 303872945}
-  m_GameObject: {fileID: 1367707702}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: .665000021}
-  m_LocalScale: {x: .39967674, y: .39967674, z: .39967674}
-  m_Children: []
-  m_Father: {fileID: 1361633169}
   m_RootOrder: 0
 --- !u!1001 &1371812570
 Prefab:
@@ -904,7 +831,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1361633169}
-  m_RootOrder: 1
+  m_RootOrder: 0
 --- !u!23 &1471042051
 Renderer:
   m_ObjectHideFlags: 0
