@@ -113,8 +113,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d153a1e0944f1a941bbe25e423761bb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startExplosion: {fileID: 400000, guid: 27ff889f9d767bc4495b5685d0889dc7, type: 2}
-  endExplosion: {fileID: 400000, guid: 27ff889f9d767bc4495b5685d0889dc7, type: 2}
+  startExplosion: {fileID: 0}
+  endExplosion: {fileID: 0}
   ticks: 0
 --- !u!136 &13600000
 CapsuleCollider:

@@ -14,7 +14,7 @@ public class ScoreHandlerScript : MonoBehaviour {
 	}
     public void EnemyDestroyed(int value){
          if(multiplier==0) multiplier=1;
-         else multiplier+=0.1;
+         else multiplier+=0.1f;
          additivescore+=value;              
     }
 }
