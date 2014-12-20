@@ -13,20 +13,25 @@ public class BulletScript : MonoBehaviour {
         model=transform.GetChild(0).gameObject;
 		if(startExplosion!=null)
 		Instantiate(startExplosion, transform.position, transform.rotation);
+		Vector3 direction=transform.TransformDirection(Vector3.forward*100f);	
+		//rigidbody.AddForce(direction);
+		rigidbody.velocity=direction;
 	}
-	void End () {
-		if(endExplosion!=null)
+	void End (int explode) {
+		if(endExplosion!=null&&explode==1)
 		Instantiate(endExplosion, transform.position, transform.rotation);
 		GameObject.Destroy(gameObject);
 	}
 	// Update is called once per frame
 	void Update () {
-		Vector3 direction=transform.TransformDirection(Vector3.forward*Time.deltaTime*100f);	
-		controller.Move(direction);
+		//controller.Move(direction);
 		if(!model.renderer.isVisible)
-        	End();
+        	End(0);
 	}
 	void OnCollisionEnter(Collision collision){
-		End();
+		string name=collision.gameObject.name;
+		print("Bullet Collided With "+name);
+		if(name!="Bullet(Clone)")
+		End(1);
 	}
 }
