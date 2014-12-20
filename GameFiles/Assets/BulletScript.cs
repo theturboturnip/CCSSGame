@@ -30,7 +30,6 @@ public class BulletScript : MonoBehaviour {
 	}
 	void OnCollisionEnter(Collision collision){
 		string name=collision.gameObject.name;
-		print("Bullet Collided With "+name);
 		if(name!="Bullet(Clone)")
 		End(1);
 	}
