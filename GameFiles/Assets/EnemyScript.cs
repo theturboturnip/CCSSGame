@@ -8,9 +8,10 @@ public class EnemyScript : MonoBehaviour {
 	void Start () {
 		scoreHandler=GameObject.Find("Handlers/ScoreHandler").GetComponent<ScoreHandlerScript>();
 	}
-	void OnCollisionEnter (Collision c) {
+	public void OnCollisionEnter (Collision c) {
+		print("EnemyHit");
 	    Instantiate(explosion,transform.position,transform.rotation);
+	    scoreHandler.EnemyDestroyed(1,0.1f);
         GameObject.Destroy(gameObject);
-        scoreHandler.EnemyDestroyed(100);
 	}
 }

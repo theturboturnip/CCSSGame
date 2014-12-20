@@ -2,8 +2,8 @@
 using System.Collections;
 
 public class ScoreHandlerScript : MonoBehaviour {
-    public float totalScore=0,additiveScore=0,multiplier=0,totalScoreGoal=0;
-    float additiveAddTimer=0,additiveAddTime=4;
+    public float totalScore=0,additiveScore=0,multiplier=0,scoreUnit=100;
+    float additiveAddTimer=0,additiveAddTime=4,totalScoreAdditive=10,totalScoreGoal=0;
 	// Use this for initialization
 	void Start () {
 	     
@@ -11,18 +11,20 @@ public class ScoreHandlerScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-    	if(additiveAddTimer<=0){
+    	if(additiveAddTimer<=0&&additiveScore*multiplier>0){
     		totalScoreGoal+=additiveScore*multiplier;
     		additiveScore=0;
     		multiplier=0;
+    		totalScoreAdditive=(totalScoreGoal-totalScore)/25;
     	}
     	else additiveAddTimer-=Time.deltaTime;
-    	if(totalScore<totalScoreGoal) totalScore+=5;         
+    	if(totalScore<totalScoreGoal) totalScore+=totalScoreAdditive;
+    	else if(totalScore>totalScoreGoal) totalScore=totalScoreGoal;         
 	}
-    public void EnemyDestroyed(int value){
+    public void EnemyDestroyed(int value,float toAddToMultiplier){
          if(multiplier==0) multiplier=1;
-         else multiplier+=0.1f;
-         additiveScore+=value; 
+         else multiplier+=toAddToMultiplier;
+         additiveScore+=value*scoreUnit; 
          additiveAddTimer=additiveAddTime;             
     }
 }

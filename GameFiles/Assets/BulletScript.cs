@@ -1,20 +1,17 @@
 ﻿using UnityEngine;
 using System.Collections;
-[RequireComponent (typeof (CharacterController))]
 
 public class BulletScript : MonoBehaviour {
 	public Transform startExplosion,endExplosion;
 	public float ticks=0;
-	CharacterController controller;
     GameObject model;
     Vector3 direction;
 	// Use this for initialization
 	void Start () {
-		controller=gameObject.GetComponent<CharacterController>();
         model=transform.GetChild(0).gameObject;
 		if(startExplosion!=null)
 		Instantiate(startExplosion, transform.position, transform.rotation);
-		direction=transform.TransformDirection(Vector3.forward*100f);	
+		direction=transform.TransformDirection(Vector3.forward*75f);	
 		//rigidbody.AddForce(direction);
 	}
 	void End (int explode) {
