@@ -12,7 +12,7 @@ public class ExplosionScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		print(myCollider.radius);
+		//print(myCollider.radius);
 		if(myCollider.radius<1f)
 		myCollider.radius+=scale;
 
