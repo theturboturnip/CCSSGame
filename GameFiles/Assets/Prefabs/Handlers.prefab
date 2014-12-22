@@ -373,6 +373,11 @@ MonoBehaviour:
   - {fileID: 100000, guid: 99d0661ef30ad4967a4daa7974d52ac6, type: 2}
   - {fileID: 100024, guid: a597e3c9251fd439f9284e8f8a081339, type: 2}
   - {fileID: 100026, guid: 025cc4da480cd4c21b128cf6b60c3ba5, type: 2}
+  EnemyLengths:
+  - 2
+  - 10
+  - 10
+  - 20
   interval: .75
   currentTime: 0
 --- !u!222 &22200000

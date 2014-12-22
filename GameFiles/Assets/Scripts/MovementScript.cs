@@ -12,7 +12,7 @@ public class MovementScript : MonoBehaviour {
 	void Update () {
 	    moveIfRequired();
         shootIfRequired();
-        CameraLimit=ScreenToWorldPoint(new Vector3(Screen.width,Screen.height/2,0));
+        CameraLimit=ScreenToWorldPoint(new Vector3(Screen.width*1.5f,Screen.height/2,0));
     }  
 
     Vector3 ScreenToWorldPoint(Vector3 pos){
@@ -26,7 +26,7 @@ public class MovementScript : MonoBehaviour {
 
     void shootIfRequired(){
         if(Input.GetMouseButton(0)&&bulletTicks>=bulletTickLimit){
-            Instantiate(bullet,model.position+model.TransformDirection(Vector3.forward)*1.5f,model.rotation);
+            Instantiate(bullet,model.position+model.TransformDirection(Vector3.forward),model.rotation);
             bulletTicks=0;
          }
          bulletTicks++;

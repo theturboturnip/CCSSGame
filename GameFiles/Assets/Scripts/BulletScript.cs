@@ -25,9 +25,9 @@ public class BulletScript : MonoBehaviour {
 		if(!model.renderer.isVisible)
         	End(0);
 	}
-	void OnCollisionEnter(Collision collision){
-		string name=collision.gameObject.name;
-		if(name!="Bullet(Clone)")
+	void OnCollisionEnter(Collision c){
+		string name=c.gameObject.name;
+		if(name!="Bullet(Clone)"&&c.gameObject.tag!="Explosion")
 		End(1);
 	}
 }
