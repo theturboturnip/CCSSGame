@@ -284,7 +284,7 @@ MonoBehaviour:
   totalScore: 0
   additiveScore: 0
   multiplier: 0
-  totalScoreGoal: 0
+  scoreUnit: 1000
 --- !u!114 &11400012
 MonoBehaviour:
   m_ObjectHideFlags: 1

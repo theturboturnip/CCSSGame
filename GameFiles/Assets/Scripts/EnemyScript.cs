@@ -10,9 +10,7 @@ public class EnemyScript : MonoBehaviour {
 		scoreHandler=GameObject.Find("Handlers/ScoreHandler").GetComponent<ScoreHandlerScript>();
 	}
 	public void OnCollisionEnter (Collision c) {
-		string name=c.gameObject.name;
-		if(!isDead/*&&name!="Enemy"*/){
-			print("Enemy Hit by "+name);
+		if(!isDead){
 	    	Instantiate(explosion,transform.position,transform.rotation);
 	    	float multiplier=0.1f;
 	    	if(c.gameObject.tag=="Explosion") multiplier=0.2f;
