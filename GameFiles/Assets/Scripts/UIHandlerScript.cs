@@ -17,9 +17,9 @@ public class UIHandlerScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		string additiveString=setLength(scoreHandler.additiveScore.ToString("000000"),6)+"*"+setLength(scoreHandler.multiplier.ToString("0.0"),3);
+		string additiveString=setLength(scoreHandler.additiveScore.ToString("000000"),6)+"*"+setLength(scoreHandler.multiplier.ToString("00.0"),4);
 		additive.text=additiveString;
-		string totalScoreString=setLength(scoreHandler.totalScore.ToString("0000000000"),10);
+		string totalScoreString=setLength(scoreHandler.totalScore.ToString("0000000000"),11);
 		total.text=totalScoreString;
 	}
 	string setLength(string toMod,int bits){

@@ -349,8 +349,10 @@ MonoBehaviour:
   model: {fileID: 400002}
   bullet: {fileID: 400002, guid: 73e24630e1e57594b849cf9fc5a5b6bf, type: 2}
   bossLocation: {x: 50, y: 0, z: 0}
-  cameraSpeed: 1
-  playerSpeed: 5
+  CameraLimit: {x: 0, y: 0, z: 0}
+  cameraSpeed: 2
+  playerSpeed: 6
+  moveInfinitely: 1
 --- !u!124 &12400000
 Behaviour:
   m_ObjectHideFlags: 1
