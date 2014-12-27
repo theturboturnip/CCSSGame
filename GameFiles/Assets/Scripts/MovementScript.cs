@@ -26,7 +26,11 @@ public class MovementScript : MonoBehaviour {
 
     void shootIfRequired(){
         if(Input.GetMouseButton(0)&&bulletTicks>=bulletTickLimit){
-            Instantiate(bullet,model.position+model.TransformDirection(Vector3.forward),model.rotation);
+            GameObject Bullet;
+            Bullet = Instantiate(bullet,model.position+model.TransformDirection(Vector3.forward),model.rotation) as GameObject;
+            //print(Bullet);
+            //BulletScript2 script=Bullet.GetComponent<BulletScript2>();
+            //script.SetTarget(ScreenToWorldPoint(Input.mousePosition));
             bulletTicks=0;
          }
          bulletTicks++;

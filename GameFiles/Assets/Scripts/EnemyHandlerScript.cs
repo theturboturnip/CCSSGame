@@ -7,7 +7,7 @@ public class EnemyHandlerScript : MonoBehaviour {
 	MovementScript playerMover;
 	public GameObject[] Enemies={};
 	public float[] EnemyLengths={};
-	public float interval=1f,currentTime=0f,places=100f;
+	public float interval=0f,currentTime=0f,places=100f;
 	Vector3 spawnPos;
 	// Use this for initialization
 	void Start () {
@@ -17,7 +17,7 @@ public class EnemyHandlerScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(currentTime<=0f&&places>0){
+		if(places>0){
 			currentTime=interval;
 			spawnRandomEnemy();
 		}else currentTime-=Time.deltaTime;

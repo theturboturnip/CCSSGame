@@ -212,8 +212,8 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FontData:
-    m_Font: {fileID: 12800000, guid: c6e7830119e364ca7aa11af8549ff86f, type: 3}
-    m_FontSize: 14
+    m_Font: {fileID: 12800000, guid: d13bd201526d44b368bf0a005e4d8f63, type: 3}
+    m_FontSize: 30
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
@@ -238,8 +238,8 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FontData:
-    m_Font: {fileID: 12800000, guid: c6e7830119e364ca7aa11af8549ff86f, type: 3}
-    m_FontSize: 14
+    m_Font: {fileID: 12800000, guid: d13bd201526d44b368bf0a005e4d8f63, type: 3}
+    m_FontSize: 30
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
@@ -380,6 +380,7 @@ MonoBehaviour:
   - 20
   interval: .75
   currentTime: 0
+  places: 100
 --- !u!222 &22200000
 CanvasRenderer:
   m_ObjectHideFlags: 1
@@ -417,14 +418,14 @@ RectTransform:
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: .899999976, z: 1}
   m_Children: []
   m_Father: {fileID: 22400004}
   m_RootOrder: 1
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -154, y: -15}
-  m_SizeDelta: {x: 154, y: 15}
+  m_AnchoredPosition: {x: -154, y: -20}
+  m_SizeDelta: {x: 154, y: 20}
   m_Pivot: {x: 0, y: 0}
 --- !u!224 &22400002
 RectTransform:
@@ -434,14 +435,14 @@ RectTransform:
   m_GameObject: {fileID: 100002}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: .899999976, z: 1}
   m_Children: []
   m_Father: {fileID: 22400004}
   m_RootOrder: 0
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -154, y: -32.8000031}
-  m_SizeDelta: {x: 154, y: 17.7999992}
+  m_AnchoredPosition: {x: -154, y: -40.4000015}
+  m_SizeDelta: {x: 154, y: 20}
   m_Pivot: {x: 0, y: 0}
 --- !u!224 &22400004
 RectTransform:
