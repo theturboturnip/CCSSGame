@@ -39,7 +39,7 @@ public class MovementScript : MonoBehaviour {
     void moveIfRequired(){
         if(moveInfinitely) transform.Translate(Vector3.right*cameraSpeed*Time.deltaTime);
         else transform.position=Vector3.MoveTowards(transform.position,bossLocation,cameraSpeed*Time.deltaTime);
-        Vector3 mouseWorldPos=Input.mousePosition;
+        Vector3 mouseWorldPos=Input.mousePosition+new Vector3(16,16,0);
         model.LookAt(ScreenToWorldPoint(mouseWorldPos));
         Vector3 movementVector=new Vector3(Input.GetAxis("Horizontal"),0,Input.GetAxis("Vertical"))*playerSpeed*Time.deltaTime;
         model.position+=movementVector;

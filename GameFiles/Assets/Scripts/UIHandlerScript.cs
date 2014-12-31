@@ -5,6 +5,7 @@ using System.Collections;
 public class UIHandlerScript : MonoBehaviour {
 	ScoreHandlerScript scoreHandler;
 	Text additive,total;
+	public Material reticule;
 	// Use this for initialization
 	void Start () {
 		GameObject ScoreHandlerObject=GameObject.Find("Handlers/ScoreHandler"),
