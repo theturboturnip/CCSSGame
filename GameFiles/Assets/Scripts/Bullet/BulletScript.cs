@@ -28,10 +28,8 @@ public class BulletScript : MonoBehaviour {
 		line.SetPosition(0,transform.position-transform.forward*0.5f);
         line.SetPosition(1,transform.position+transform.forward*0.5f);
         line.enabled=true;
-        Ray ray=new Ray(transform.position,transform.forward);
 	}
 	void OnCollisionEnter(Collision c){
-		string name=c.gameObject.name;
 		if(c.gameObject.tag!="Player")
 		End(1);
 	}

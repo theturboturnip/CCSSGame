@@ -6,7 +6,6 @@ public class EnemyScript : MonoBehaviour {
     public Transform explosion;
     bool isDead=false;
     ScoreHandlerScript scoreHandler;
-    string[] enemyNames={};
     GameObject model;
     public int health=1;
 	// Use this for initialization

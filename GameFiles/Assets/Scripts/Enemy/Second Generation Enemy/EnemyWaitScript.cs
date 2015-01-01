@@ -10,6 +10,6 @@ public class EnemyWaitScript :EnemyScriptBase {
 	
 	// Update is called once per frame
 	void Update () {
-	
+		print("WaitEnabled");
 	}
 }
