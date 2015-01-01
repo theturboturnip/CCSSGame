@@ -276,11 +276,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3e5660cb28984aceaac9c676a7fc594, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  model: {fileID: 1367436097}
   bullet: {fileID: 400002, guid: 73e24630e1e57594b849cf9fc5a5b6bf, type: 2}
-  cameraSpeed: 4
   playerSpeed: 6
-  moveInfinitely: 1
 --- !u!4 &556408694
 Transform:
   m_ObjectHideFlags: 0
@@ -434,6 +431,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 677928477}
+  - 114: {fileID: 677928478}
   m_Layer: 0
   m_Name: Handlers
   m_TagString: Untagged
@@ -457,6 +455,18 @@ Transform:
   - {fileID: 92933302}
   m_Father: {fileID: 0}
   m_RootOrder: 1
+--- !u!114 &677928478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 677928476}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f822612141be7af449abdf84fcec8794, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enabled: 
 --- !u!1 &715553852
 GameObject:
   m_ObjectHideFlags: 0
