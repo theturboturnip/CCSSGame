@@ -7,22 +7,21 @@ public class EnemyHandlerScript : MonoBehaviour {
 	MovementScript playerMover;
 	public GameObject[] Enemies={};
 	public float[] EnemyLengths={};
-	public float interval=0f,currentTime=0f,places=100f;
+	public float interval=0f,currentTime=0f,places=1f;
 	Vector3 spawnPos;
 	// Use this for initialization
 	void Start () {
 		playerMover=GameObject.Find("Player").GetComponent<MovementScript>();
-		reset();
+		//reset();
+		while(places>0){
+			spawnRandomEnemy();
+			places--;
+		}
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if(places>0){
-			currentTime=interval;
-			spawnRandomEnemy();
-		}else currentTime-=Time.deltaTime;
 		if(Input.GetKeyDown(KeyCode.R)) reset();
-
 	}
 	void spawnRandomEnemy(){
 		int enemyId=Random.Range(0,Enemies.Length);

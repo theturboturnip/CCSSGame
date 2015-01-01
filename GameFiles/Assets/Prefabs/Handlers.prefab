@@ -299,6 +299,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 470e0baecca454b1fb979e811611cab6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reticule: {fileID: 0}
 --- !u!114 &11400010
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -378,9 +379,9 @@ MonoBehaviour:
   - 10
   - 10
   - 20
-  interval: .75
+  interval: 2
   currentTime: 0
-  places: 100
+  places: 1
 --- !u!222 &22200000
 CanvasRenderer:
   m_ObjectHideFlags: 1
