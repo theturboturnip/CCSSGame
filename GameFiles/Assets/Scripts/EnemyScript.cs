@@ -13,10 +13,11 @@ public class EnemyScript : MonoBehaviour {
 	void Start () {
 		model=transform.GetChild(0).gameObject;
 		scoreHandler=GameObject.Find("Handlers/ScoreHandler").GetComponent<ScoreHandlerScript>();
+		rigidbody.velocity=transform.forward;
 	}
 	void Update(){
 		transform.position=new Vector3(transform.position.x,0f,transform.position.z);
-		rigidbody.velocity=Vector3.zero;
+		//rigidbody.velocity=Vector3.zero;
 	}
 	public void OnCollisionEnter (Collision c) {
 		if(c.gameObject.tag!="Enemy"){

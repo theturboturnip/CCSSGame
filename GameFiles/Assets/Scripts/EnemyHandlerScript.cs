@@ -33,8 +33,5 @@ public class EnemyHandlerScript : MonoBehaviour {
 	}
 	void reset(){
 		places=100;
-		spawnPos=playerMover.CameraLimit;
-	
-
 	}
 }
