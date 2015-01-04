@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class EnemyWaitScript :EnemyScriptBase {
+public class ScreenHandlerScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
@@ -10,6 +10,6 @@ public class EnemyWaitScript :EnemyScriptBase {
 	
 	// Update is called once per frame
 	void Update () {
-		print("WaitEnabled");
+	
 	}
 }

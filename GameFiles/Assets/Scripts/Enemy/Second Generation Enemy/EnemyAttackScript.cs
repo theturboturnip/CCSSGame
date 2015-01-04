@@ -10,6 +10,6 @@ public class EnemyAttackScript : EnemyScriptBase {
 	
 	// Update is called once per frame
 	void Update () {
-	
+		print("AttackEnabled");
 	}
 }
