@@ -11,7 +11,7 @@ public class EnemyBehaviourHandler : MonoBehaviour {
 	int currentIndex=0;
 	// Use this for initialization
 	void Start () {
-		rigidbody.velocity=Vector3.left*5f;
+		//rigidbody.velocity=Vector3.left*5f;
 		GetScripts();
 		SetScripts();
 	}
@@ -32,7 +32,6 @@ public class EnemyBehaviourHandler : MonoBehaviour {
 		if(queue.Length==currentIndex){
 			currentIndex=0;
 		}
-		print(currentIndex+","+queue.Length);
 		currentBehaviour=queue[currentIndex];
 		currentTime=queueTimes[currentIndex];
 		currentIndex++;
