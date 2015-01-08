@@ -31,7 +31,6 @@ public class BulletScript : MonoBehaviour {
         line.enabled=true;
 	}
 	void OnCollisionEnter(Collision c){
-		print(c.gameObject+","+Shooter);
 		if(c.gameObject.tag!="Bullet"&&c.gameObject!=Shooter){
 			End(1);
 		}

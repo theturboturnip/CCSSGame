@@ -14,7 +14,6 @@ public class UIHandlerScript : MonoBehaviour {
 				   AdditiveScoreObject=GameObject.Find("Handlers/UIHandler/Canvas/Additive"),
 				   HealthObject=GameObject.Find("Handlers/UIHandler/Canvas/Health");
 		Player=GameObject.Find("Player").GetComponent<MovementScript>();
-		print(Player.health);
 		scoreHandler=ScoreHandlerObject.GetComponent<ScoreHandlerScript>();
 		additive=AdditiveScoreObject.GetComponent<Text>();
 		total=TotalScoreObject.GetComponent<Text>();
