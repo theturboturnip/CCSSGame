@@ -12,4 +12,5 @@ public abstract class EnemyScriptBase : MonoBehaviour {
 	void Update () {
 	
 	}
+	public virtual void Reset(){}
 }

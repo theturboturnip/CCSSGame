@@ -29,16 +29,26 @@ public class EnemyBehaviourHandler : MonoBehaviour {
 	}
 
 	void SetScripts(){
-		if(queue.Length==currentIndex){
-			currentIndex=0;
+		foreach(KeyValuePair<string, EnemyScriptBase> entry in scripts) {
+			entry.Value.Reset();
+			entry.Value.enabled=false;
 		}
+		currentIndex=bind(currentIndex,0,queue.Length);
 		currentBehaviour=queue[currentIndex];
 		currentTime=queueTimes[currentIndex];
-		currentIndex++;
 		scripts[currentBehaviour].enabled=true;
-		scripts[queue[currentIndex-1]].enabled=false;
+		currentIndex++;
+		currentIndex=bind(currentIndex,0,queue.Length);
+		if(queue.Length==currentIndex) currentIndex=0;
 	}
-
+	int bind(int tobind,int lower,int upper){
+		//if tobind=1,lower=2, and upper=5
+		while(tobind<lower)
+			tobind=upper+(tobind-lower);
+		while(tobind>upper)
+			tobind=lower+(tobind-upper);
+		return tobind;
+	}
 	void AddScript<T>(string name) where T: EnemyScriptBase{
 		T script=gameObject.GetComponent<T>();
 		//print(script);

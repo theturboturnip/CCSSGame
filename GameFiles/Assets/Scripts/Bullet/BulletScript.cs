@@ -13,7 +13,7 @@ public class BulletScript : MonoBehaviour {
         line.enabled=false;
 		if(startExplosion!=null)
 		Instantiate(startExplosion, transform.position, transform.rotation);
-		direction=transform.TransformDirection(Vector3.forward*75f);	
+		direction=transform.TransformDirection(Vector3.forward*25f);	
 	}
 	void End (int explode) {
 		if(endExplosion!=null&&explode==1)
@@ -30,7 +30,7 @@ public class BulletScript : MonoBehaviour {
         line.enabled=true;
 	}
 	void OnCollisionEnter(Collision c){
-		if(c.gameObject.tag!="Player")
+		if(c.gameObject.tag!=gameObject.tag)
 		End(1);
 	}
 }
