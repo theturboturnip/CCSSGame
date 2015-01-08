@@ -17,9 +17,14 @@ public class EnemyScript : MonoBehaviour {
 	void Update(){
 		//transform.position=new Vector3(transform.position.x,0f,transform.position.z);
 		//rigidbody.velocity=Vector3.zero;
+		if(Camera.main.WorldToScreenPoint(transform.position).x<0) GameObject.Destroy(gameObject);
 	}
 	public void OnCollisionEnter (Collision c) {
+		print(c.gameObject.tag);
 		if(c.gameObject.tag!="Enemy"){
+			if(c.gameObject.tag=="Bullet"){
+				if(c.gameObject.GetComponent<BulletScript>().Shooter==gameObject) return;
+			}
 			getHurt(1,c);
     	}	
 	}

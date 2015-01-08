@@ -10,7 +10,6 @@ public class EnemyAttackScript : EnemyScriptBase {
 	// Use this for initialization
 	void Start () {
 		target=GameObject.Find("Player").transform;
-		bullet.gameObject.tag="Enemy";
 	}
 	
 	// Update is called once per frame
@@ -18,7 +17,8 @@ public class EnemyAttackScript : EnemyScriptBase {
 		transform.LookAt(target);
 		//print("AttackEnabled");
 		if(bulletTicks>=bulletTickLimit){
-			Instantiate(bullet,transform.position+transform.TransformDirection(Vector3.forward),transform.rotation);
+			Transform Bullet=Instantiate(bullet,transform.position+transform.TransformDirection(Vector3.forward),transform.rotation) as Transform;
+			Bullet.gameObject.GetComponent<BulletScript>().Shooter=gameObject;
         	bulletTicks=0;
         	//Time.timeScale=0f;
     	}

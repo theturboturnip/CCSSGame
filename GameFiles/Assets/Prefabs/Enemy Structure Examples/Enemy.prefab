@@ -146,8 +146,8 @@ MonoBehaviour:
   - Wait
   - Attack
   queueTimes:
-  - 2
   - 1
+  - 2
   currentBehaviour: 
 --- !u!114 &11400004
 MonoBehaviour:

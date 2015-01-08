@@ -154,6 +154,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startExplosion: {fileID: 0}
   endExplosion: {fileID: 0}
+  Shooter: {fileID: 0}
   ticks: 100
 --- !u!120 &12000000
 LineRenderer:

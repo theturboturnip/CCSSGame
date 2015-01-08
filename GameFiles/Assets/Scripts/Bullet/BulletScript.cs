@@ -3,6 +3,7 @@ using System.Collections;
 
 public class BulletScript : MonoBehaviour {
 	public Transform startExplosion,endExplosion;
+	public GameObject Shooter;
 	public float ticks=100;
     GameObject model;
     Vector3 direction;
@@ -13,7 +14,7 @@ public class BulletScript : MonoBehaviour {
         line.enabled=false;
 		if(startExplosion!=null)
 		Instantiate(startExplosion, transform.position, transform.rotation);
-		direction=transform.TransformDirection(Vector3.forward*25f);	
+		direction=transform.TransformDirection(Vector3.forward*75f);	
 	}
 	void End (int explode) {
 		if(endExplosion!=null&&explode==1)
@@ -30,7 +31,9 @@ public class BulletScript : MonoBehaviour {
         line.enabled=true;
 	}
 	void OnCollisionEnter(Collision c){
-		if(c.gameObject.tag!=gameObject.tag)
-		End(1);
+		print(c.gameObject+","+Shooter);
+		if(c.gameObject.tag!="Bullet"&&c.gameObject!=Shooter){
+			End(1);
+		}
 	}
 }

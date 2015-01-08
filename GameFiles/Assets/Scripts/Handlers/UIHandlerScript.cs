@@ -4,16 +4,21 @@ using System.Collections;
 
 public class UIHandlerScript : MonoBehaviour {
 	ScoreHandlerScript scoreHandler;
-	Text additive,total;
+	Text additive,total,health;
 	public Material reticule;
+	MovementScript Player;
 	// Use this for initialization
 	void Start () {
 		GameObject ScoreHandlerObject=GameObject.Find("Handlers/ScoreHandler"),
 				   TotalScoreObject=GameObject.Find("Handlers/UIHandler/Canvas/Total"),	
-				   AdditiveScoreObject=GameObject.Find("Handlers/UIHandler/Canvas/Additive");
+				   AdditiveScoreObject=GameObject.Find("Handlers/UIHandler/Canvas/Additive"),
+				   HealthObject=GameObject.Find("Handlers/UIHandler/Canvas/Health");
+		Player=GameObject.Find("Player").GetComponent<MovementScript>();
+		print(Player.health);
 		scoreHandler=ScoreHandlerObject.GetComponent<ScoreHandlerScript>();
 		additive=AdditiveScoreObject.GetComponent<Text>();
 		total=TotalScoreObject.GetComponent<Text>();
+		health=HealthObject.GetComponent<Text>();
 	}
 	
 	// Update is called once per frame
@@ -22,6 +27,7 @@ public class UIHandlerScript : MonoBehaviour {
 		additive.text=additiveString;
 		string totalScoreString=setLength(scoreHandler.totalScore.ToString("0000000000"),11);
 		total.text=totalScoreString;
+		health.text=Player.health.ToString("000");
 	}
 	string setLength(string toMod,int bits){
 		if (toMod.Length>=bits){

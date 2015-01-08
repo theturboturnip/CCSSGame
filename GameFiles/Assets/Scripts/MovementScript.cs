@@ -1,10 +1,12 @@
 using UnityEngine;
+using UnityEditor;
 using System.Collections;
 
 public class MovementScript : MonoBehaviour {
     public Transform bullet;
     public float playerSpeed;
     float bulletTicks,bulletTickLimit=10;
+    public int health=10;
 
 	// Update is called once per frame
 	void Update () {
@@ -23,7 +25,8 @@ public class MovementScript : MonoBehaviour {
 
     void shootIfRequired(){
         if(Input.GetMouseButton(0)&&bulletTicks>=bulletTickLimit){
-            Instantiate(bullet,transform.position+transform.TransformDirection(Vector3.forward),transform.rotation);
+            Transform Bullet=Instantiate(bullet,transform.position+transform.TransformDirection(Vector3.forward),transform.rotation) as Transform;
+            Bullet.gameObject.GetComponent<BulletScript>().Shooter=gameObject;
             bulletTicks=0;
          }
          bulletTicks++;
@@ -42,5 +45,18 @@ public class MovementScript : MonoBehaviour {
            transform.position=new Vector3(transform.position.x-movementVector.x,transform.position.y,transform.position.z);
         if(yOff)
            transform.position=new Vector3(transform.position.x,transform.position.y,transform.position.z-movementVector.z);
+    }
+    void OnCollisionEnter(Collision c){
+        if(c.gameObject.tag!="Player"){
+            if(c.gameObject.tag=="Bullet"){
+                if(c.gameObject.GetComponent<BulletScript>().Shooter==gameObject) return;
+            }
+            getHurt(1);
+        }   
+    }
+    void getHurt(int toLose){
+        if(toLose>health) toLose=health; 
+        health-=toLose;
+        if(health<=0){ EditorApplication.isPlaying=false; Application.Quit(); }
     }
 }
