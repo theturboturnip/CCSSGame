@@ -443,6 +443,7 @@ MonoBehaviour:
   rightX: 0
   topZ: 0
   bottomZ: 0
+  boundaries: 1
 --- !u!114 &11400022
 MonoBehaviour:
   m_ObjectHideFlags: 1

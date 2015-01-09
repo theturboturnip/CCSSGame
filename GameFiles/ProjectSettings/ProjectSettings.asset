@@ -13,7 +13,7 @@ PlayerSettings:
   companyName: DefaultCompany
   productName: GameFiles
   defaultCursor: {fileID: 2800000, guid: 5e7e4cbe60d7342eea3e327cf18e38fa, type: 3}
-  cursorHotspot: {x: 0, y: 0}
+  cursorHotspot: {x: 16, y: 16}
   defaultScreenWidth: 1024
   defaultScreenHeight: 768
   defaultScreenWidthWeb: 960

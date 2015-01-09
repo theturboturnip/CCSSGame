@@ -22,7 +22,7 @@ public class EnemyScript : MonoBehaviour {
 	public void OnCollisionEnter (Collision c) {
 		if(c.gameObject.tag!="Enemy"){
 			if(c.gameObject.tag=="Bullet"){
-				if(c.gameObject.GetComponent<BulletScript>().Shooter==gameObject) return;
+				return;
 			}
 			getHurt(1,c);
     	}	
@@ -32,7 +32,7 @@ public class EnemyScript : MonoBehaviour {
 			transform.Translate(Vector3.back);
 		}
 	}
-	void getHurt(int value,Collision c){
+	public void getHurt(int value,Collision c){
 		bool invincible=!model.renderer.isVisible;
 		if(!isDead&&!invincible) health-=value;
 		if(health<=0) die(c); 

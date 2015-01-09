@@ -31,7 +31,9 @@ public class BulletScript : MonoBehaviour {
         line.enabled=true;
 	}
 	void OnCollisionEnter(Collision c){
-		if(c.gameObject.tag!="Bullet"&&c.gameObject!=Shooter){
+		if((c.gameObject!=Shooter&&ticks<=20)||(ticks>20)){
+			if(c.gameObject.tag=="Enemy") c.gameObject.GetComponent<EnemyScript>().getHurt(1,c);
+			if(c.gameObject.tag=="Player") c.gameObject.GetComponent<MovementScript>().getHurt(1);
 			End(1);
 		}
 	}
