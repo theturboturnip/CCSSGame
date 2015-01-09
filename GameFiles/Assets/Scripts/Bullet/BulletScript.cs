@@ -17,6 +17,7 @@ public class BulletScript : MonoBehaviour {
 		direction=transform.TransformDirection(Vector3.forward*75f);	
 	}
 	void End (int explode) {
+		//print(ticks);
 		if(endExplosion!=null&&explode==1)
 		Instantiate(endExplosion, transform.position, transform.rotation);
 		GameObject.Destroy(gameObject);
@@ -31,9 +32,9 @@ public class BulletScript : MonoBehaviour {
         line.enabled=true;
 	}
 	void OnCollisionEnter(Collision c){
-		if((c.gameObject!=Shooter&&ticks<=20)||(ticks>20)){
-			if(c.gameObject.tag=="Enemy") c.gameObject.GetComponent<EnemyScript>().getHurt(1,c);
-			if(c.gameObject.tag=="Player") c.gameObject.GetComponent<MovementScript>().getHurt(1);
+		if((c.gameObject!=Shooter&&ticks>90)||(ticks<=90)){
+			//if(c.gameObject.tag=="Enemy") c.gameObject.GetComponent<EnemyScript>().getHurt(1,c);
+			//if(c.gameObject.tag=="Player") c.gameObject.GetComponent<MovementScript>().getHurt(1);
 			End(1);
 		}
 	}

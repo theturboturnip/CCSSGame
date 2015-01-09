@@ -23,9 +23,13 @@ public class ScoreHandlerScript : MonoBehaviour {
     	else if(totalScore>totalScoreGoal) totalScore=totalScoreGoal;         
 	}
     public void EnemyDestroyed(int value,float toAddToMultiplier){
-         if(multiplier==0) multiplier=1;
+         if(multiplier==0&&toAddToMultiplier!=0) multiplier=1;
          else multiplier+=toAddToMultiplier;
          additiveScore+=value*scoreUnit; 
          additiveAddTimer=additiveAddTime;             
+    }
+
+    public void claimCombo(){
+        additiveAddTimer=0;
     }
 }

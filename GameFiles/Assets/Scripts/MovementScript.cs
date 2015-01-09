@@ -7,10 +7,10 @@ public class MovementScript : MonoBehaviour {
     public float playerSpeed;
     float bulletTicks,bulletTickLimit=10;
     public int health=10;
-    ScreenHandlerScript screenHandler;
+    ScoreHandlerScript scoreHandler;
 
     void Start () {
-        screenHandler=GameObject.Find("Handlers/ScreenHandler").GetComponent<ScreenHandlerScript>();
+        scoreHandler=GameObject.Find("Handlers/ScoreHandler").GetComponent<ScoreHandlerScript>();
     }
 
 	// Update is called once per frame
@@ -53,16 +53,19 @@ public class MovementScript : MonoBehaviour {
             transform.position=new Vector3(transform.position.x,transform.position.y,transform.position.z-movementVector.z);
     */}
     void OnCollisionEnter(Collision c){
-        if(c.gameObject.tag!="Player"){
+        if(c.gameObject.tag!="Enemy"){
             if(c.gameObject.tag=="Bullet"){
-                return;
+                BulletScript bullet = c.gameObject.GetComponent<BulletScript>();
+                if((bullet.Shooter==gameObject&&bullet.ticks>=90))
+                    return;
             }
             getHurt(1);
-        }   
+        }
     }
     public void getHurt(int toLose){
         if(toLose>health) toLose=health; 
         health-=toLose;
+        scoreHandler.claimCombo();
         if(health==0){ EditorApplication.isPlaying=false; Application.Quit(); }
     }
 }

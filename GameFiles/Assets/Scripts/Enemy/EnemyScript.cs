@@ -22,7 +22,9 @@ public class EnemyScript : MonoBehaviour {
 	public void OnCollisionEnter (Collision c) {
 		if(c.gameObject.tag!="Enemy"){
 			if(c.gameObject.tag=="Bullet"){
-				return;
+				BulletScript bullet = c.gameObject.GetComponent<BulletScript>();
+				if((bullet.Shooter==gameObject&&bullet.ticks>=90))
+					return;
 			}
 			getHurt(1,c);
     	}	
@@ -33,15 +35,29 @@ public class EnemyScript : MonoBehaviour {
 		}
 	}
 	public void getHurt(int value,Collision c){
-		bool invincible=!model.renderer.isVisible;
-		if(!isDead&&!invincible) health-=value;
-		if(health<=0) die(c); 
+		if(!isDead) health-=value;
+		string causeOfDeath="";
+		//if(c.gameObject.tag!=null) causeOfDeath=c.gameObject.tag;
+		//if(c.gameObject.tag=="Explosion") causeOfDeath="Explosion";
+		if(c.gameObject.tag=="Bullet"){	
+			if(c.gameObject.GetComponent<BulletScript>().Shooter.tag=="Enemy") causeOfDeath="Friendly";
+			else causeOfDeath="Bullet";
+		}
+		if(health<=0) die(causeOfDeath); 
 	}
-	void die(Collision c){
-		Instantiate(explosion,transform.position,transform.rotation);
+	void die(string causeOfDeath){
+		GameObject Explosion;
+		Explosion=Instantiate(explosion,transform.position,transform.rotation) as GameObject;
+		/*if(causeOfDeath=="Friendly")
+			Explosion.tag="Friendly";*/
 	    float multiplier=0.1f;
-	    if(c.gameObject.tag=="Explosion") multiplier=0.2f;
-	    scoreHandler.EnemyDestroyed(1,multiplier);
+	    int worth=1;
+	    if(causeOfDeath=="Explosion") multiplier=0.2f;
+	    if(causeOfDeath=="Friendly"){
+	    	multiplier=0.0f;
+	    	worth=0;
+	    }
+	    scoreHandler.EnemyDestroyed(worth,multiplier);
         GameObject.Destroy(gameObject);
         isDead=true;
 	}
