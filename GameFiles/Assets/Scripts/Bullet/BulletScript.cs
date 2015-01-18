@@ -32,7 +32,7 @@ public class BulletScript : MonoBehaviour {
         line.enabled=true;
 	}
 	void OnCollisionEnter(Collision c){
-		if((c.gameObject!=Shooter)||(ticks<=90)){
+		if((c.gameObject!=Shooter)||(ticks<=97)){
 			if(c.gameObject.tag=="Enemy") c.gameObject.GetComponent<EnemyScript>().getHurt(1,c);
 			if(c.gameObject.tag=="Player") c.gameObject.GetComponent<MovementScript>().getHurt(1);
 			End(1);

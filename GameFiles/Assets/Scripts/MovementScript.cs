@@ -34,6 +34,7 @@ public class MovementScript : MonoBehaviour {
             Transform Bullet=Instantiate(bullet,transform.position+transform.TransformDirection(Vector3.forward),transform.rotation) as Transform;
             Bullet.gameObject.GetComponent<BulletScript>().Shooter=gameObject;
             bulletTicks=0;
+            gameObject.GetComponent<AudioSource>().Play();
          }
          bulletTicks++;
     }

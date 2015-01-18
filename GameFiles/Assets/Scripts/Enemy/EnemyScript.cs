@@ -35,15 +35,17 @@ public class EnemyScript : MonoBehaviour {
 		}
 	}
 	public void getHurt(int value,Collision c){
-		if(!isDead) health-=value;
-		string causeOfDeath="";
-		//if(c.gameObject.tag!=null) causeOfDeath=c.gameObject.tag;
-		//if(c.gameObject.tag=="Explosion") causeOfDeath="Explosion";
-		if(c.gameObject.tag=="Bullet"){	
-			if(c.gameObject.GetComponent<BulletScript>().Shooter.tag=="Enemy") causeOfDeath="Friendly";
-			else causeOfDeath="Bullet";
-		}
-		if(health<=0) die(causeOfDeath); 
+		try{
+			if(!isDead) health-=value;
+			string causeOfDeath="";
+			//if(c.gameObject.tag!=null) causeOfDeath=c.gameObject.tag;
+			//if(c.gameObject.tag=="Explosion") causeOfDeath="Explosion";
+			if(c.gameObject.tag=="Bullet"){	
+				if(c.gameObject.GetComponent<BulletScript>().Shooter.tag=="Enemy") causeOfDeath="Friendly";
+				else causeOfDeath="Bullet";
+			}
+			if(health<=0) die(causeOfDeath); 
+		}catch{}
 	}
 	void die(string causeOfDeath){
 		GameObject Explosion;
