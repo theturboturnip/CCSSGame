@@ -63,7 +63,6 @@ public class MovementScript : MonoBehaviour {
         }
     }
     public void getHurt(int toLose){
-        if(toLose>health) toLose=health; 
         health-=toLose;
         scoreHandler.claimCombo();
         if(health==0){ EditorApplication.isPlaying=false; Application.Quit(); }
