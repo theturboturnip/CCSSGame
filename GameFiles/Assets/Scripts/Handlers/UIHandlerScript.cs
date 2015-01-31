@@ -7,6 +7,7 @@ public class UIHandlerScript : MonoBehaviour {
 	Text additive,total,health;
 	public Material reticule;
 	MovementScript Player;
+	string infinity="∞";
 	// Use this for initialization
 	void Start () {
 		GameObject ScoreHandlerObject=GameObject.Find("Handlers/ScoreHandler"),
@@ -26,7 +27,10 @@ public class UIHandlerScript : MonoBehaviour {
 		additive.text=additiveString;
 		string totalScoreString=setLength(scoreHandler.totalScore.ToString("0000000000"),11);
 		total.text=totalScoreString;
-		health.text=Player.health.ToString("000");
+		if(Player.health<0)
+			health.text=infinity;
+		else
+			health.text=Player.health.ToString("000");
 	}
 	string setLength(string toMod,int bits){
 		if (toMod.Length>=bits){

@@ -425,7 +425,7 @@ MonoBehaviour:
   - 10
   - 10
   - 20
-  interval: 1
+  interval: 1.5
   currentTime: 0
   places: 1
 --- !u!114 &11400020
@@ -443,7 +443,6 @@ MonoBehaviour:
   rightX: 0
   topZ: 0
   bottomZ: 0
-  boundaries: 1
 --- !u!114 &11400022
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -5,7 +5,7 @@ using System.Collections;
 public class MovementScript : MonoBehaviour {
     public Transform bullet;
     public float playerSpeed;
-    float bulletTicks,bulletTickLimit=10;
+    float bulletTicks,bulletTickLimit=12;
     public int health=10;
     ScoreHandlerScript scoreHandler;
 

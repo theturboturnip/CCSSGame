@@ -19,29 +19,18 @@ public class EnemyScript : MonoBehaviour {
 		//rigidbody.velocity=Vector3.zero;
 		if(Camera.main.WorldToScreenPoint(transform.position).x<0) GameObject.Destroy(gameObject);
 	}
-	public void OnCollisionEnter (Collision c) {
-		if(c.gameObject.tag!="Enemy"){
-			if(c.gameObject.tag=="Bullet"){
-				BulletScript bullet = c.gameObject.GetComponent<BulletScript>();
-				if((bullet.Shooter==gameObject&&bullet.ticks>=90))
-					return;
-			}
-			getHurt(1,c);
-    	}	
-	}
+	
 	public void OnCollisonStay (Collision c){
 		if(c.gameObject.tag!="Enemy"){
 			transform.Translate(Vector3.back);
 		}
 	}
-	public void getHurt(int value,Collision c){
+	public void getHurt(int value,GameObject go){
 		try{
 			if(!isDead) health-=value;
 			string causeOfDeath="";
-			//if(c.gameObject.tag!=null) causeOfDeath=c.gameObject.tag;
-			//if(c.gameObject.tag=="Explosion") causeOfDeath="Explosion";
-			if(c.gameObject.tag=="Bullet"){	
-				if(c.gameObject.GetComponent<BulletScript>().Shooter.tag=="Enemy") causeOfDeath="Friendly";
+			if(go.tag=="Bullet"||go.tag=="Player"){	
+				if(go.GetComponent<BulletScript>().Shooter.tag=="Enemy") causeOfDeath="Friendly";
 				else causeOfDeath="Bullet";
 			}
 			if(health<=0) die(causeOfDeath); 

@@ -14,28 +14,37 @@ public class BulletScript : MonoBehaviour {
         line.enabled=false;
 		if(startExplosion!=null)
 		Instantiate(startExplosion, transform.position, transform.rotation);
-		direction=transform.TransformDirection(Vector3.forward*75f);	
+		direction=transform.TransformDirection(Vector3.forward*50f);	
 	}
-	void End (int explode) {
+	void End (int explode,Vector3 collisionPos) {
 		//print(ticks);
 		if(endExplosion!=null&&explode==1)
-		Instantiate(endExplosion, transform.position, transform.rotation);
+			Instantiate(endExplosion, transform.position, transform.rotation);
 		GameObject.Destroy(gameObject);
 	}
 	// Update is called once per frame
 	void Update () {
 		ticks--;
-		if(ticks<=0) End(0);
-		rigidbody.velocity=direction;
-		line.SetPosition(0,transform.position-transform.forward*0.5f);
-        line.SetPosition(1,transform.position+transform.forward*0.5f);
+		if(ticks<=0) End(0,Vector3.zero);
+		transform.Translate(direction*Time.deltaTime,Space.World);
+		Ray ray=new Ray(transform.position/*-transform.forward*0.5f*/,transform.forward);
+		Vector3 start=ray.GetPoint(0f),end=ray.GetPoint(2f);
+
+		RaycastHit hit;
+		Physics.Raycast(ray, out hit, 1.0F);
+		if(hit.transform!=null)
+			HandleCollision(hit);
+		line.SetPosition(0,start);
+        line.SetPosition(1,end);
         line.enabled=true;
 	}
-	void OnCollisionEnter(Collision c){
-		if((c.gameObject!=Shooter)||(ticks<=97)){
-			if(c.gameObject.tag=="Enemy") c.gameObject.GetComponent<EnemyScript>().getHurt(1,c);
-			if(c.gameObject.tag=="Player") c.gameObject.GetComponent<MovementScript>().getHurt(1);
-			End(1);
+	void HandleCollision(RaycastHit c){
+		GameObject go=c.transform.gameObject;
+		bool canCollide=(go!=Shooter&&go!=null)&&go.tag!="Explosion";
+		if(canCollide){
+			if(go.tag=="Enemy") go.GetComponent<EnemyScript>().getHurt(1,go);
+			if(go.tag=="Player") go.GetComponent<MovementScript>().getHurt(1);
+			End(1,c.point);
 		}
 	}
 }
