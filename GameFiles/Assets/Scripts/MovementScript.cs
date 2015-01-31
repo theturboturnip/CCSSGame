@@ -4,6 +4,7 @@ using System.Collections;
 
 public class MovementScript : MonoBehaviour {
     public Transform bullet;
+    public bool isDead;
     public float playerSpeed;
     float bulletTicks,bulletTickLimit=12;
     public int health=10;
@@ -18,6 +19,10 @@ public class MovementScript : MonoBehaviour {
 	    moveIfRequired();
         shootIfRequired();
         rigidbody.velocity=Vector3.zero;
+        if (isDead){
+            isDead=false;
+            health=10;
+        }
     }  
 
     Vector3 ScreenToWorldPoint(Vector3 pos){
@@ -66,6 +71,6 @@ public class MovementScript : MonoBehaviour {
     public void getHurt(int toLose){
         health-=toLose;
         scoreHandler.claimCombo();
-        if(health==0){ EditorApplication.isPlaying=false; Application.Quit(); }
+        if(health==0){ isDead=true; }
     }
 }

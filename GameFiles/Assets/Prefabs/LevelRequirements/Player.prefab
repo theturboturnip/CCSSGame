@@ -283,8 +283,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 400002, guid: 73e24630e1e57594b849cf9fc5a5b6bf, type: 2}
+  isDead: 0
   playerSpeed: 9
-  health: -1
+  health: 50
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

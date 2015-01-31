@@ -25,7 +25,6 @@ public class EnemyAttackScript : EnemyScriptBase {
         Vector3 bulletRot=transform.rotation.eulerAngles;
 		bulletRot.y+=Random.Range(-5.0f,5.0f);
         Vector3 lookAt = Quaternion.LookRotation(targetDir).eulerAngles;
-        print(lookAt.y+","+bulletRot.y);
         if(lookAt.y-10<=bulletRot.y&&lookAt.y+10>=bulletRot.y){
 			 if(bulletTicks>=bulletTickLimit){	
 				Transform Bullet=Instantiate(bullet,transform.position+transform.TransformDirection(Vector3.forward),Quaternion.Euler(bulletRot)) as Transform;
