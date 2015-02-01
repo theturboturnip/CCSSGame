@@ -48,6 +48,7 @@ public class MainMenu2 : MonoBehaviour {
 	}
 	public void ConfirmNewGame(){
 		Game.current.name=GameObject.Find("NewGameCanvas/InputField/Text").GetComponent<Text>().text;
+		Game.current.score=0;
 		SaveLoad.Save();
 		Application.LoadLevel(1);
 	}
