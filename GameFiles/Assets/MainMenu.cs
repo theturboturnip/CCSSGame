@@ -2,7 +2,6 @@
 using System.Collections;
 
 public class MainMenu : MonoBehaviour {
-
 	public enum Menu {
 		MainMenu,
 		NewGame,
@@ -40,30 +39,32 @@ public class MainMenu : MonoBehaviour {
 		}
 
 		else if (currentMenu == Menu.NewGame) {
-			Game.current.deaths=0;
-			Game.current.score=0.0f;
-			SaveLoad.Save();
-			Application.LoadLevel(1);
+			Game.current.name=GUILayout.TextField(Game.current.name, 25);
+			if(GUILayout.Button("Confirm")){
+				SaveLoad.Save();
+				Application.LoadLevel(1);
+			}
 		}
 
 		else if (currentMenu == Menu.Continue) {
 			
-			GUILayout.Box("Select Save File");
+			GUILayout.Box("Load this save file?");
 			GUILayout.Space(10);
 			try{
-				Game g=SaveLoad.currentGame;
-				if(GUILayout.Button(g.score+"-"+g.deaths)) {
-					Game.current = g;
-					//Move on to game...
-					Application.LoadLevel(1);
+				Game g=Game.current;
+				GUILayout.Box(g.name+"\n\nScore: "+g.score);
+					if(GUILayout.Button("OK")) {
+						//Move on to game...
+						Application.LoadLevel(1);
+					}
+				GUILayout.Space(10);
+				if(GUILayout.Button("Cancel")) {
+					currentMenu = Menu.MainMenu;
 				}
 			}catch{
 				currentMenu=Menu.MainMenu;
 			}
-			GUILayout.Space(10);
-			if(GUILayout.Button("Cancel")) {
-				currentMenu = Menu.MainMenu;
-			}
+			
 			
 		}
 

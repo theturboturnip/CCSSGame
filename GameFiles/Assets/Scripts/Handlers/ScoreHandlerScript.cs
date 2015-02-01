@@ -25,11 +25,8 @@ public class ScoreHandlerScript : MonoBehaviour {
     	else additiveAddTimer-=Time.deltaTime;
     	if(totalScore<totalScoreGoal) totalScore+=totalScoreAdditive;
     	else if(totalScore>totalScoreGoal) totalScore=totalScoreGoal;
-        Game.current.score+=totalScoreGoal-totalScore;         
-        if(player.isDead){
-            Game.current.deaths+=1;
-        }
         if(Input.GetButtonDown("Quit")){
+            Game.current.score=totalScoreGoal+(additiveScore*multiplier);
             SaveLoad.Save();
             EditorApplication.isPlaying=false;
             Application.Quit();
@@ -44,5 +41,8 @@ public class ScoreHandlerScript : MonoBehaviour {
 
     public void claimCombo(){
         additiveAddTimer=0;
+    }
+    public void die(){
+    //    Game.current.deaths+=1;
     }
 }

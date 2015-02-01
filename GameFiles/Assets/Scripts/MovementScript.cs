@@ -3,7 +3,7 @@ using UnityEditor;
 using System.Collections;
 
 public class MovementScript : MonoBehaviour {
-    public Transform bullet;
+    public Transform bullet,explosion;
     public bool isDead;
     public float playerSpeed;
     float bulletTicks,bulletTickLimit=12;
@@ -58,7 +58,7 @@ public class MovementScript : MonoBehaviour {
         if(yOff)
             transform.position=new Vector3(transform.position.x,transform.position.y,transform.position.z-movementVector.z);
     */}
-    void OnCollisionEnter(Collision c){
+    /*void OnCollisionEnter(Collision c){
         if(c.gameObject.tag!="Enemy"){
             if(c.gameObject.tag=="Bullet"){
                 BulletScript bullet = c.gameObject.GetComponent<BulletScript>();
@@ -67,10 +67,24 @@ public class MovementScript : MonoBehaviour {
             }
             getHurt(1);
         }
-    }
+    }*/
     public void getHurt(int toLose){
-        health-=toLose;
-        scoreHandler.claimCombo();
-        if(health==0){ isDead=true; }
+        if(!isDead){
+            health-=toLose;
+            print(health);
+            scoreHandler.claimCombo();
+            if(health<=0) die();
+            scoreHandler.die();
+        }
+    }
+    IEnumerator die(){
+        print("Dying");
+        //isDead=true;
+        Instantiate(explosion,transform.position,transform.rotation);
+        Vector3 oldpos=transform.position;
+        transform.position=ScreenToWorldPoint(new Vector3(-1000,0,0));
+        yield return new WaitForSeconds(1f);
+        transform.position=oldpos;
+        //isDead=false;
     }
 }
