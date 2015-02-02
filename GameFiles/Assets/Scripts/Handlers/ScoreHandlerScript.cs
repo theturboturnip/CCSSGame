@@ -8,6 +8,7 @@ public class ScoreHandlerScript : MonoBehaviour {
     public MovementScript player;
 	// Use this for initialization
 	void Start () {
+        SaveLoad.Load();
 	   player=GameObject.Find("Player").GetComponent<MovementScript>();
        totalScore=Game.current.score;
        totalScoreGoal=Game.current.score;
@@ -25,7 +26,7 @@ public class ScoreHandlerScript : MonoBehaviour {
     	else additiveAddTimer-=Time.deltaTime;
     	if(totalScore<totalScoreGoal) totalScore+=totalScoreAdditive;
     	else if(totalScore>totalScoreGoal) totalScore=totalScoreGoal;
-        if(Input.GetButtonDown("Quit")){
+        if(Input.GetButton("Quit")){
             Game.current.score=totalScoreGoal+(additiveScore*multiplier);
             SaveLoad.Save();
             EditorApplication.isPlaying=false;

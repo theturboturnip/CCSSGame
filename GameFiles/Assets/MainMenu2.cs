@@ -13,6 +13,7 @@ public class MainMenu2 : MonoBehaviour {
 	public GameObject[] canvases=new GameObject[3];
 	// Use this for initialization
 	void Start () {
+		Game.current=new Game();
 		SaveLoad.Load();
 		canvases[0]=GameObject.Find("MainMenuCanvas");
 		canvases[1]=GameObject.Find("LoadGameCanvas");
@@ -47,7 +48,14 @@ public class MainMenu2 : MonoBehaviour {
 		Application.LoadLevel(1);
 	}
 	public void ConfirmNewGame(){
-		Game.current.name=GameObject.Find("NewGameCanvas/InputField/Text").GetComponent<Text>().text;
+		string name=GameObject.Find("NewGameCanvas/InputField/Text").GetComponent<Text>().text;
+		if(name==""){
+			GameObject.Find("NewGameCanvas/InputField/Placeholder").GetComponent<Text>().text="Please type a name!";
+			return;
+		}else{
+			Game.current.name=name;
+		}
+		//Game.current.name=;
 		Game.current.score=0;
 		SaveLoad.Save();
 		Application.LoadLevel(1);

@@ -11,13 +11,17 @@ public class MovementScript : MonoBehaviour {
     ScoreHandlerScript scoreHandler;
 
     void Start () {
+        if(!Game.current.upgrades[0].enabled){
+            GameObject.Find("Player/BulletSpawnRight").SetActive(false);
+            GameObject.Find("Player/BulletSpawnLeft").SetActive(false);
+        }
         scoreHandler=GameObject.Find("Handlers/ScoreHandler").GetComponent<ScoreHandlerScript>();
     }
 
 	// Update is called once per frame
 	void Update () {
 	    moveIfRequired();
-        shootIfRequired();
+        //shootIfRequired();
         rigidbody.velocity=Vector3.zero;
         if (isDead){
             isDead=false;
