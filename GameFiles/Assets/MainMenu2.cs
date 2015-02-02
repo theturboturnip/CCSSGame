@@ -55,8 +55,12 @@ public class MainMenu2 : MonoBehaviour {
 		}else{
 			Game.current.name=name;
 		}
+		foreach(Upgrade u in Game.current.upgrades){
+			u.enabled=false;
+		}
 		//Game.current.name=;
 		Game.current.score=0;
+		Game.current=Game.newGame();
 		SaveLoad.Save();
 		Application.LoadLevel(1);
 	}

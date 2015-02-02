@@ -4,8 +4,10 @@ using System.Collections;
 public class Upgrade{
 	public string type="",name="";
 	public bool enabled=false;
-	public Upgrade(string newType,string newName){
+	public float cost=0;
+	public Upgrade(string newType,string newName,float newCost){
 		type=newType;
 		name=newName;
+		cost=newCost;
 	}
 }

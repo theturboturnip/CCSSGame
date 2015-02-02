@@ -23,26 +23,24 @@ public class ScreenHandlerScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		GameObject[] allObjects=new GameObject[]{Player};
 		rightX=-rightX;
 		leftX=-leftX;
 		bottomZ=-bottomZ;
 		topZ=-topZ;
-		foreach(GameObject obj in allObjects){
-			Transform trans=obj.transform;
-			if(trans.root==trans){
-				Vector3 screenPos=WorldToScreenPoint(trans.position);    
-        		Vector3 toMove=trans.position;
-        		if(screenPos.x<0)
-            		toMove.x=rightX;
-        		else if(screenPos.x>Screen.width)
-            		toMove.x=leftX;
-        		if(screenPos.y<0)
-            		toMove.z=bottomZ;
-        		else if(screenPos.y>Screen.height)
-            		toMove.z=topZ;
-        		trans.position=toMove;
-        	}
+		GameObject obj=Player;
+		Transform trans=obj.transform;
+		if(trans.root==trans){
+			Vector3 screenPos=WorldToScreenPoint(trans.position);    
+        	Vector3 toMove=trans.position;
+        	if(screenPos.x<0)
+           		toMove.x=rightX;
+        	else if(screenPos.x>Screen.width)
+           		toMove.x=leftX;
+        	if(screenPos.y<0)
+            	toMove.z=bottomZ;
+        	else if(screenPos.y>Screen.height)
+            	toMove.z=topZ;
+        	trans.position=toMove;
         }
         rightX=-rightX;
 		leftX=-leftX;

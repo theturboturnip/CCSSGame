@@ -29,8 +29,7 @@ public class ScoreHandlerScript : MonoBehaviour {
         if(Input.GetButton("Quit")){
             Game.current.score=totalScoreGoal+(additiveScore*multiplier);
             SaveLoad.Save();
-            EditorApplication.isPlaying=false;
-            Application.Quit();
+            Application.LoadLevel(1);
         }
 	}
     public void EnemyDestroyed(int value,float toAddToMultiplier){

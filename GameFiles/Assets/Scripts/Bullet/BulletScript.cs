@@ -47,4 +47,7 @@ public class BulletScript : MonoBehaviour {
 			End(1,c.point);
 		}
 	}
+	void OnBecameInvisible() {
+    	End(0,Vector3.zero);   
+    }
 }
