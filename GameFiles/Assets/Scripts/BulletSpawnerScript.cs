@@ -18,7 +18,7 @@ public class BulletSpawnerScript : MonoBehaviour {
         	Transform Bullet=Instantiate(bullet,transform.position/*+transform.TransformDirection(Vector3.forward)*/,transform.rotation) as Transform;
             Bullet.gameObject.GetComponent<BulletScript>().Shooter=parent;
             bulletTicks=0;
-            parent.GetComponent<AudioSource>().Play();
+            //parent.GetComponent<AudioSource>().Play();
         }
         bulletTicks++;
 	}

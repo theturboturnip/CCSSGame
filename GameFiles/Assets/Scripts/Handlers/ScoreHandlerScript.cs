@@ -26,7 +26,7 @@ public class ScoreHandlerScript : MonoBehaviour {
     	else additiveAddTimer-=Time.deltaTime;
     	if(totalScore<totalScoreGoal) totalScore+=totalScoreAdditive;
     	else if(totalScore>totalScoreGoal) totalScore=totalScoreGoal;
-        if(Input.GetButton("Quit")){
+        if(Input.GetButton("Quit")||player.health==0){
             Game.current.score=totalScoreGoal+(additiveScore*multiplier);
             SaveLoad.Save();
             Application.LoadLevel(1);
