@@ -201,7 +201,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   queue:
   - Wait
-  - Attack
+  - Wait
   queueTimes:
   - 1
   - 2

@@ -11,6 +11,7 @@ public class MovementScript : MonoBehaviour {
     ScoreHandlerScript scoreHandler;
 
     void Start () {
+        SaveLoad.Load();
         if(!Game.current.upgrades[0].enabled){
             GameObject.Find("Player/BulletSpawnRight").SetActive(false);
             GameObject.Find("Player/BulletSpawnLeft").SetActive(false);
@@ -48,7 +49,7 @@ public class MovementScript : MonoBehaviour {
          bulletTicks++;
     }
 
-    void moveIfRequired(){
+    public void moveIfRequired(){
         Vector3 mouseWorldPos=Input.mousePosition-new Vector3(16,16,0);
         transform.LookAt(ScreenToWorldPoint(mouseWorldPos));
         Vector3 movementVector=new Vector3(Input.GetAxis("Horizontal"),0,Input.GetAxis("Vertical"))*playerSpeed*Time.deltaTime;
