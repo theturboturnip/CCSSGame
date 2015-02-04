@@ -53,7 +53,8 @@ public class MovementScript : MonoBehaviour {
     }
     void moveIfRequired(){
         rotateIfRequired();
-        Vector3 movementVector=new Vector3(Input.GetAxis("Horizontal1"),0,Input.GetAxis("Vertical1"))*playerSpeed*Time.deltaTime;
+        //print(InputWrapper.GetAxis("Horizontal1"));
+        Vector3 movementVector=new Vector3(InputWrapper.GetAxis("Horizontal1"),0,InputWrapper.GetAxis("Vertical1"))*playerSpeed*Time.deltaTime;
         transform.position+=movementVector;
     }
     public void getHurt(int toLose){
