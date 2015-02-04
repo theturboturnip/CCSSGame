@@ -9,9 +9,9 @@ public class ScoreHandlerScript : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         SaveLoad.Load();
-	   player=GameObject.Find("Player").GetComponent<MovementScript>();
-       totalScore=Game.current.score;
-       totalScoreGoal=Game.current.score;
+	    player=GameObject.Find("Player").GetComponent<MovementScript>();
+        totalScore=Game.current.score;
+        totalScoreGoal=Game.current.score;
 	}
 	
 	// Update is called once per frame

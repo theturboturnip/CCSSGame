@@ -14,12 +14,14 @@ public class BulletSpawnerScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(Input.GetMouseButton(0)&&bulletTicks>=bulletTickLimit){
-        	Transform Bullet=Instantiate(bullet,transform.position/*+transform.TransformDirection(Vector3.forward)*/,transform.rotation) as Transform;
+		bulletTicks++;
+	}
+	public void shoot(){
+		if(bulletTicks>=bulletTickLimit){
+			print("Shooting");
+        	Transform Bullet=Instantiate(bullet,transform.position,transform.rotation) as Transform;
             Bullet.gameObject.GetComponent<BulletScript>().Shooter=parent;
             bulletTicks=0;
-            //parent.GetComponent<AudioSource>().Play();
         }
-        bulletTicks++;
 	}
 }

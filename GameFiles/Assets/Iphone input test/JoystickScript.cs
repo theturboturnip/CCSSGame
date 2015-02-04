@@ -6,6 +6,7 @@ using System.Collections;
 public class JoystickScript : MonoBehaviour {
 	public GameObject joystickImage;
 	public string horizontalAxis="Horizontal",verticalAxis="Vertical";
+	public Vector2 axes;
 	RectTransform bounds,joystickBounds;
 	ScrollRect joystickRect;
 	JoystickImageScript joystickButton;
@@ -29,7 +30,7 @@ public class JoystickScript : MonoBehaviour {
 		float radius=32f;
 		// Calculate the offset vector from the center of the circle to our position
      	Vector2 offset = joystickBounds.anchoredPosition - deadZone;
-     	Vector2 axes=offset;
+     	axes=offset;
      	axes.Normalize();
 
      	InputWrapper.SetAxis(horizontalAxis,axes.x);

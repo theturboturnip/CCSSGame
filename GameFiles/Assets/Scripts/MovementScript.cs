@@ -22,13 +22,21 @@ public class MovementScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 	    moveIfRequired();
-        //shootIfRequired();
+        shootIfRequired();
         rigidbody.velocity=Vector3.zero;
         if (isDead){
             isDead=false;
             health=10;
         }
     }  
+
+    public virtual void shootIfRequired(){
+        if(Input.GetMouseButton(0)){
+            foreach(BulletSpawnerScript b in GetComponentsInChildren<BulletSpawnerScript>()){
+                b.shoot();
+            }
+        }
+    }
 
     Vector3 ScreenToWorldPoint(Vector3 pos){
          pos.z=12;
@@ -39,57 +47,21 @@ public class MovementScript : MonoBehaviour {
          return Camera.main.WorldToScreenPoint(pos);
     }
 
-    void shootIfRequired(){
-        if(Input.GetMouseButton(0)&&bulletTicks>=bulletTickLimit){
-            Transform Bullet=Instantiate(bullet,transform.position+transform.TransformDirection(Vector3.forward),transform.rotation) as Transform;
-            Bullet.gameObject.GetComponent<BulletScript>().Shooter=gameObject;
-            bulletTicks=0;
-            gameObject.GetComponent<AudioSource>().Play();
-         }
-         bulletTicks++;
-    }
-
-    public void moveIfRequired(){
+    public virtual void rotateIfRequired(){
         Vector3 mouseWorldPos=Input.mousePosition-new Vector3(16,16,0);
         transform.LookAt(ScreenToWorldPoint(mouseWorldPos));
-        Vector3 movementVector=new Vector3(Input.GetAxis("Horizontal"),0,Input.GetAxis("Vertical"))*playerSpeed*Time.deltaTime;
+    }
+    void moveIfRequired(){
+        rotateIfRequired();
+        Vector3 movementVector=new Vector3(Input.GetAxis("Horizontal1"),0,Input.GetAxis("Vertical1"))*playerSpeed*Time.deltaTime;
         transform.position+=movementVector;
-
-        //Checking if the player is offscreen
-        
-        /*if(xOff)
-            if()
-            transform.position=new Vector3(transform.position.x-movementVector.x,transform.position.y,transform.position.z);
-        if(yOff)
-            transform.position=new Vector3(transform.position.x,transform.position.y,transform.position.z-movementVector.z);
-    */}
-    /*void OnCollisionEnter(Collision c){
-        if(c.gameObject.tag!="Enemy"){
-            if(c.gameObject.tag=="Bullet"){
-                BulletScript bullet = c.gameObject.GetComponent<BulletScript>();
-                if((bullet.Shooter==gameObject&&bullet.ticks>=90))
-                    return;
-            }
-            getHurt(1);
-        }
-    }*/
+    }
     public void getHurt(int toLose){
         if(!isDead){
             health-=toLose;
             print(health);
             scoreHandler.claimCombo();
-            if(health<=0) die();
             scoreHandler.die();
         }
-    }
-    IEnumerator die(){
-        print("Dying");
-        //isDead=true;
-        Instantiate(explosion,transform.position,transform.rotation);
-        Vector3 oldpos=transform.position;
-        transform.position=ScreenToWorldPoint(new Vector3(-1000,0,0));
-        yield return new WaitForSeconds(1f);
-        transform.position=oldpos;
-        //isDead=false;
     }
 }
