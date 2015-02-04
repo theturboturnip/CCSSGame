@@ -7,6 +7,7 @@ public class JoystickScript : MonoBehaviour {
 	public GameObject joystickImage;
 	public string horizontalAxis="Horizontal",verticalAxis="Vertical";
 	public Vector2 axes;
+	public bool Analog=false;
 	RectTransform bounds,joystickBounds;
 	ScrollRect joystickRect;
 	JoystickImageScript joystickButton;
@@ -24,19 +25,31 @@ public class JoystickScript : MonoBehaviour {
 		previousPos=joystickRect.normalizedPosition;
 		bounds=GetComponent<RectTransform>();
 	}
-	
+	float round(float toRound){
+		float toreturn=0;
+		if(toRound<-0.5)
+			toreturn=-1;
+		else if(toRound>0)
+			toreturn=1;
+		return toreturn;
+	}
 	// Update is called once per frame
 	void Update () {
 		float radius=32f;
 		// Calculate the offset vector from the center of the circle to our position
      	Vector2 offset = joystickBounds.anchoredPosition - deadZone;
-     	axes=offset;
-     	axes.Normalize();
+     	float distance = offset.magnitude;
 
+     	axes=offset;
+     	if(distance!=0&&!Analog){
+     		//axes=Vector2.zero;
+     		axes*=radius/distance;
+     	}
+     	axes.Normalize();
      	InputWrapper.SetAxis(horizontalAxis,axes.x);
      	InputWrapper.SetAxis(verticalAxis,axes.y);
      	// Calculate the linear distance of this offset vector
-     	float distance = offset.magnitude;
+     	
      	if (radius < distance)
      	{
         	// If the distance is more than our radius we need to clamp
@@ -46,16 +59,9 @@ public class JoystickScript : MonoBehaviour {
           	joystickBounds.anchoredPosition = deadZone + direction * radius;
      	}
      	if(joystickButton.IsHighlighted(e)){
-			distance=Vector2.Distance(joystickBounds.anchoredPosition,deadZone);
-			float speed=distance/10;
-			if(speed<1) speed=1;
-			joystickBounds.anchoredPosition=Vector2.MoveTowards(joystickBounds.anchoredPosition,deadZone,speed);
-			//Color c=new Color(255,255,255,axes.magnitude);
-			//myImg.color=c;
-		}else{
-			//Color c=myImg.color;
-			//c.a=0.0f;
-			//myImg.color=c;
-		}
+     		joystickBounds.anchoredPosition=deadZone;
+     		InputWrapper.SetAxis(horizontalAxis,0.0f);
+     		InputWrapper.SetAxis(verticalAxis,0.0f);
+     	}
 	}
 }
