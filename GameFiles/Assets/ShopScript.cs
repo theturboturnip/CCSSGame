@@ -44,6 +44,14 @@ public class ShopScript : MonoBehaviour {
 		}
 	}
 	public void StartGame(){
+		#if UNITY_IPHONE
+			Application.LoadLevel(3);
+			return;
+		#endif
+		#if UNITY_ANDROID
+			Application.LoadLevel(3);
+			return;
+		#endif
 		Application.LoadLevel(2);
 	}
 }

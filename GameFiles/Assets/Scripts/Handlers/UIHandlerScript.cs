@@ -11,8 +11,8 @@ public class UIHandlerScript : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		GameObject ScoreHandlerObject=GameObject.Find("Handlers/ScoreHandler"),
-				   TotalScoreObject=GameObject.Find("Handlers/UIHandler/Canvas/Total"),	
-				   AdditiveScoreObject=GameObject.Find("Handlers/UIHandler/Canvas/Additive"),
+				   TotalScoreObject=GameObject.Find("Handlers/UIHandler/Canvas/ScorePanel/Total"),	
+				   AdditiveScoreObject=GameObject.Find("Handlers/UIHandler/Canvas/ScorePanel/Additive"),
 				   HealthObject=GameObject.Find("Handlers/UIHandler/Canvas/Health");
 		Player=GameObject.Find("Player").GetComponent<MovementScript>();
 		scoreHandler=ScoreHandlerObject.GetComponent<ScoreHandlerScript>();
