@@ -8,22 +8,17 @@ public class JoystickScript : MonoBehaviour {
 	public string horizontalAxis="Horizontal",verticalAxis="Vertical";
 	public Vector2 axes;
 	public bool Analog=false;
-	RectTransform bounds,joystickBounds;
+	RectTransform joystickBounds;
 	ScrollRect joystickRect;
 	JoystickImageScript joystickButton;
-	Image myImg;
 	Vector2 deadZone;
-	Vector2 previousPos;
 	BaseEventData e=new BaseEventData(EventSystem.current);
 	// Use this for initialization
 	void Start () {
-		myImg=GetComponent<Image>();
 		joystickBounds=joystickImage.GetComponent<RectTransform>();
 		joystickRect=joystickImage.GetComponent<ScrollRect>();
 		joystickButton=joystickImage.GetComponent<JoystickImageScript>();
 		deadZone=joystickRect.content.anchoredPosition;
-		previousPos=joystickRect.normalizedPosition;
-		bounds=GetComponent<RectTransform>();
 	}
 	float round(float toRound){
 		float toreturn=0;

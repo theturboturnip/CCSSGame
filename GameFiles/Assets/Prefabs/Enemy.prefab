@@ -201,10 +201,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   queue:
   - Wait
-  - Wait
+  - Attack
   queueTimes:
+  - 3
   - 1
-  - 2
   currentBehaviour: 
 --- !u!114 &11400004
 MonoBehaviour:

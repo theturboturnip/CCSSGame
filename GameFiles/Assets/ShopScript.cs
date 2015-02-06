@@ -52,6 +52,8 @@ public class ShopScript : MonoBehaviour {
 			Application.LoadLevel(3);
 			return;
 		#endif
+		#if UNITY_STANDALONE
 		Application.LoadLevel(2);
+		#endif
 	}
 }

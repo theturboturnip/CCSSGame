@@ -67,7 +67,7 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  iPhoneBundleIdentifier: m.Jim.SpaceWarfare
+  iPhoneBundleIdentifier: com.Jim.SpaceWarfare
   metroEnableIndependentInputSource: 0
   metroEnableLowLatencyPresentationAPI: 0
   productGUID: 88f46375f6e51d942b2a8e506c9cb6ff

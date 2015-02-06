@@ -6,17 +6,13 @@ public class EnemyScript : MonoBehaviour {
     public Transform explosion;
     bool isDead=false;
     ScoreHandlerScript scoreHandler;
-    GameObject model;
     public int health=1;
-	// Use this for initialization
+
 	void Start () {
-		model=transform.GetChild(0).gameObject;
 		scoreHandler=GameObject.Find("Handlers/ScoreHandler").GetComponent<ScoreHandlerScript>();
-		//rigidbody.velocity=transform.forward;
 	}
 	void Update(){
-		//transform.position=new Vector3(transform.position.x,0f,transform.position.z);
-		//rigidbody.velocity=Vector3.zero;
+		transform.position=new Vector3(transform.position.x,0f,transform.position.z);
 		if(Camera.main.WorldToScreenPoint(transform.position).x<0) GameObject.Destroy(gameObject);
 	}
 	
@@ -37,10 +33,7 @@ public class EnemyScript : MonoBehaviour {
 		}catch{}
 	}
 	void die(string causeOfDeath){
-		GameObject Explosion;
-		Explosion=Instantiate(explosion,transform.position,transform.rotation) as GameObject;
-		/*if(causeOfDeath=="Friendly")
-			Explosion.tag="Friendly";*/
+		Instantiate(explosion,transform.position,transform.rotation);
 	    float multiplier=0.1f;
 	    int worth=1;
 	    if(causeOfDeath=="Explosion") multiplier=0.2f;
