@@ -20,6 +20,7 @@ public class MovementScript : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
+        print("Going");
 	    moveIfRequired();
         shootIfRequired();
         rigidbody.velocity=Vector3.zero;
@@ -52,14 +53,12 @@ public class MovementScript : MonoBehaviour {
     }
     void moveIfRequired(){
         rotateIfRequired();
-        //print(InputWrapper.GetAxis("Horizontal1"));
-        Vector3 movementVector=new Vector3(InputWrapper.GetAxis("Horizontal1"),0,InputWrapper.GetAxis("Vertical1"))*playerSpeed*Time.deltaTime;
+        Vector3 movementVector=new Vector3(Input.GetAxis("Horizontal"),0,Input.GetAxis("Vertical"))*playerSpeed*Time.deltaTime;
         transform.position+=movementVector;
     }
     public void getHurt(int toLose){
         if(!isDead){
             health-=toLose;
-            print(health);
             scoreHandler.claimCombo();
             scoreHandler.die();
         }

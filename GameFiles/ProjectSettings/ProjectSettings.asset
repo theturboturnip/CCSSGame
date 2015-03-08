@@ -12,7 +12,7 @@ PlayerSettings:
   accelerometerFrequency: 60
   companyName: DefaultCompany
   productName: GameFiles
-  defaultCursor: {fileID: 2800000, guid: 5e7e4cbe60d7342eea3e327cf18e38fa, type: 3}
+  defaultCursor: {fileID: 0}
   cursorHotspot: {x: 16, y: 16}
   defaultScreenWidth: 1024
   defaultScreenHeight: 768
@@ -67,7 +67,7 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  iPhoneBundleIdentifier: com.Jim.SpaceWarfare
+  iPhoneBundleIdentifier: com.Jim.SpaceWafare
   metroEnableIndependentInputSource: 0
   metroEnableLowLatencyPresentationAPI: 0
   productGUID: 88f46375f6e51d942b2a8e506c9cb6ff
