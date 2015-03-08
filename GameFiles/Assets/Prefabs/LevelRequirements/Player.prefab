@@ -60,7 +60,6 @@ GameObject:
   - 65: {fileID: 6500004}
   - 54: {fileID: 5400000}
   - 82: {fileID: 8200000}
-  - 114: {fileID: 11400000}
   - 114: {fileID: 11400008}
   m_Layer: 0
   m_Name: Player
@@ -411,22 +410,6 @@ Light:
   m_ShadowAngle: 0
   m_IndirectIntensity: 1
   m_AreaSize: {x: 1, y: 1}
---- !u!114 &11400000
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100006}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d2d755823888b4a27ba340e19be68442, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bullet: {fileID: 400002, guid: 73e24630e1e57594b849cf9fc5a5b6bf, type: 2}
-  explosion: {fileID: 400000, guid: 27ff889f9d767bc4495b5685d0889dc7, type: 2}
-  isDead: 0
-  playerSpeed: 5
-  health: 10
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -469,7 +452,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100006}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c3e5660cb28984aceaac9c676a7fc594, type: 3}
   m_Name: 
