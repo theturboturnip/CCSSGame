@@ -26,7 +26,7 @@ public class EnemyScript : MonoBehaviour {
 			if(!isDead) health-=value;
 			string causeOfDeath="";
 			if(go.tag=="Bullet"||go.tag=="Player"){	
-				if(go.GetComponent<BulletScript>().Shooter.tag=="Enemy") causeOfDeath="Friendly";
+				if (false){}//(go.GetComponent<BulletScript>().Shooter.tag=="Enemy") causeOfDeath="Friendly";
 				else causeOfDeath="Bullet";
 			}
 			if(health<=0) die(causeOfDeath); 
@@ -37,10 +37,7 @@ public class EnemyScript : MonoBehaviour {
 	    float multiplier=0.1f;
 	    int worth=1;
 	    if(causeOfDeath=="Explosion") multiplier=0.2f;
-	    if(causeOfDeath=="Friendly"){
-	    	multiplier=0.0f;
-	    	worth=0;
-	    }
+	    
 	    scoreHandler.EnemyDestroyed(worth,multiplier);
         GameObject.Destroy(gameObject);
         isDead=true;

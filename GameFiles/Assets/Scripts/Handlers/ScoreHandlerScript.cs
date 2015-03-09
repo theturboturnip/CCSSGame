@@ -15,7 +15,7 @@ public class ScoreHandlerScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if(multiplier>99.9f) multiplier=99.9f;
+        if(multiplier>9.9f) multiplier=9.9f;
     	if(additiveAddTimer<=0&&additiveScore*multiplier>0){
     		totalScoreGoal+=additiveScore*multiplier;
     		additiveScore=0;

@@ -1458,7 +1458,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1531384264}
-  - 114: {fileID: 1531384263}
   - 114: {fileID: 1531384265}
   m_Layer: 0
   m_Name: MainMenu
@@ -1467,18 +1466,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1531384263
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1531384262}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b2091280e013491aad3974e53636c91, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentMenu: 0
 --- !u!4 &1531384264
 Transform:
   m_ObjectHideFlags: 0
