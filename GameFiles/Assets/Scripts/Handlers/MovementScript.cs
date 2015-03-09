@@ -32,7 +32,7 @@ public class MovementScript : MonoBehaviour {
     public virtual void shootIfRequired(){
         if(Input.GetMouseButton(0)){
             foreach(BulletSpawnerScript b in GetComponentsInChildren<BulletSpawnerScript>()){
-                b.shoot();
+                b.shoot(Random.Range(Game.current.bullet_spread,-Game.current.bullet_spread));
             }
         }
     }

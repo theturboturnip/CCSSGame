@@ -3,13 +3,15 @@ using System.Collections;
 
 public class EnemyAttackScript : EnemyScriptBase {
 	Transform target;
-	public Transform bullet;
 	public float rotateSpeed=2.5f;
     float bulletTicks,bulletTickLimit=30;
+    BulletSpawnerScript b;
 
 	// Use this for initialization
 	void Start () {
 		target=GameObject.Find("Player").transform;
+		b=transform.GetChild(0).gameObject.GetComponent<BulletSpawnerScript>();
+		print(b);
 	}
 	
 	// Update is called once per frame
@@ -22,17 +24,10 @@ public class EnemyAttackScript : EnemyScriptBase {
         Debug.DrawRay(transform.position, newDir, Color.red);
         transform.rotation = Quaternion.LookRotation(newDir);
         Vector3 bulletRot=transform.rotation.eulerAngles;
-		bulletRot.y+=Random.Range(-5.0f,5.0f);
         Vector3 lookAt = Quaternion.LookRotation(targetDir).eulerAngles;
         if(lookAt.y-10<=bulletRot.y&&lookAt.y+10>=bulletRot.y){
-			 if(bulletTicks>=bulletTickLimit){	
-				Transform Bullet=Instantiate(bullet,transform.position+transform.TransformDirection(Vector3.forward),Quaternion.Euler(bulletRot)) as Transform;
-				Bullet.gameObject.GetComponent<BulletScript>().Shooter=gameObject;
-        		bulletTicks=0;
-        	//Time.timeScale=0f;
-    		}
-    	}	
-      	bulletTicks++;
+			b.shoot(Random.Range(25.0f,-25.0f));
+		}	
 	}
 	public override void Reset(){
 		bulletTicks=0;

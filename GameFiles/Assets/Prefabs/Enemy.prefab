@@ -11,6 +11,7 @@ GameObject:
   - 33: {fileID: 3300000}
   - 135: {fileID: 13500000}
   - 23: {fileID: 2300000}
+  - 114: {fileID: 11400008}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -200,10 +201,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   queue:
-  - Wait
   - Attack
+  - Wait
   queueTimes:
-  - 3
+  - 1
   - 1
   currentBehaviour: 
 --- !u!114 &11400004
@@ -228,8 +229,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 083c3f3501d954546bb00f760b5e7364, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 400002, guid: 73e24630e1e57594b849cf9fc5a5b6bf, type: 2}
   rotateSpeed: 5
+--- !u!114 &11400008
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa3b2d9a6e30c4a28ac308d209a0f991, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 400002, guid: 73e24630e1e57594b849cf9fc5a5b6bf, type: 2}
 --- !u!135 &13500000
 SphereCollider:
   m_ObjectHideFlags: 1

@@ -16,10 +16,13 @@ public class BulletSpawnerScript : MonoBehaviour {
 	void Update () {
 		bulletTicks++;
 	}
-	public void shoot(){
+	public void shoot(float offset){
 		if(bulletTicks>=bulletTickLimit){
 			print("Shooting");
-        	Transform Bullet=Instantiate(bullet,transform.position,transform.rotation) as Transform;
+			Vector3 r=transform.rotation.eulerAngles;
+			r.y+=offset;
+			Quaternion rot=Quaternion.Euler(r);
+        	Transform Bullet=Instantiate(bullet,transform.position,rot) as Transform;
             Bullet.gameObject.GetComponent<BulletScript>().Shooter=parent;
             bulletTicks=0;
         }
