@@ -24,19 +24,14 @@ public class EnemyScript : MonoBehaviour {
 	public void getHurt(int value,GameObject go){
 		try{
 			if(!isDead) health-=value;
-			string causeOfDeath="";
-			if(go.tag=="Bullet"||go.tag=="Player"){	
-				if (false){}//(go.GetComponent<BulletScript>().Shooter.tag=="Enemy") causeOfDeath="Friendly";
-				else causeOfDeath="Bullet";
-			}
-			if(health<=0) die(causeOfDeath); 
+			if(health<=0) die("Bullet"); 
 		}catch{}
 	}
 	void die(string causeOfDeath){
 		Instantiate(explosion,transform.position,transform.rotation);
 	    float multiplier=0.1f;
 	    int worth=1;
-	    if(causeOfDeath=="Explosion") multiplier=0.2f;
+	    //if(causeOfDeath=="Explosion") multiplier=0.2f;
 	    
 	    scoreHandler.EnemyDestroyed(worth,multiplier);
         GameObject.Destroy(gameObject);

@@ -4,14 +4,12 @@ using System.Collections;
 public class EnemyAttackScript : EnemyScriptBase {
 	Transform target;
 	public float rotateSpeed=2.5f;
-    float bulletTicks,bulletTickLimit=30;
     BulletSpawnerScript b;
 
 	// Use this for initialization
 	void Start () {
 		target=GameObject.Find("Player").transform;
 		b=transform.GetChild(0).gameObject.GetComponent<BulletSpawnerScript>();
-		print(b);
 	}
 	
 	// Update is called once per frame
@@ -29,7 +27,5 @@ public class EnemyAttackScript : EnemyScriptBase {
 			b.shoot(Random.Range(25.0f,-25.0f));
 		}	
 	}
-	public override void Reset(){
-		bulletTicks=0;
-	}
+	public override void Reset(){}
 }

@@ -8,7 +8,6 @@ public class UIHandlerScript : MonoBehaviour {
 	BorgHealth health;
 	public Material reticule;
 	MovementScript Player;
-	string infinity="∞";
 	int maxHealth;
 	// Use this for initialization
 	void Start () {

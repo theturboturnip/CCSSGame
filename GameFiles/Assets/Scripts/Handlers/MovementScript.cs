@@ -5,7 +5,6 @@ public class MovementScript : MonoBehaviour {
     public Transform bullet,explosion;
     public bool isDead;
     public float playerSpeed;
-    float bulletTicks,bulletTickLimit=12;
     public int health=10;
     ScoreHandlerScript scoreHandler;
 
@@ -29,7 +28,7 @@ public class MovementScript : MonoBehaviour {
         }
     }  
 
-    public virtual void shootIfRequired(){
+    public void shootIfRequired(){
         if(Input.GetMouseButton(0)){
             foreach(BulletSpawnerScript b in GetComponentsInChildren<BulletSpawnerScript>()){
                 b.shoot(Random.Range(Game.current.bullet_spread,-Game.current.bullet_spread));
