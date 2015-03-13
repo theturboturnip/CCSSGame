@@ -10,13 +10,13 @@ public class BorgButton : Button {
 		p=transform.parent.gameObject.GetComponent<RectTransform>();
 		r=GetComponent<RectTransform>();
 		l=GetComponent<LineRenderer>();
-		center=Camera.main.ScreenToWorldPoint(new Vector2(0.5f*Screen.width,0.5f*Screen.height));
-		l.useWorldSpace=false;
+		center=Camera.main.ViewportToWorldPoint(Vector3.one*0.5f);
+		center.z=0.0f;
 		l.SetPosition(1,center);
 //new Vector3(p.pivot.x*p.rect.width,p.pivot.y*p.rect.height,0.0f);
 	}
 	void Update(){
-		l.SetPosition(0,r.anchoredPosition3D);
+		l.SetPosition(0,Camera.main.ViewportToWorldPoint(r.rect.center));
 		r.rotation=Quaternion.Euler(Vector3.zero);//-p.eulerAngles);
 		//transform.LookAt(Camera.mainCamera.transform);
 	}

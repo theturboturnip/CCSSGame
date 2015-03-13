@@ -6,7 +6,9 @@ public class MovementScript : MonoBehaviour {
     public bool isDead;
     public float playerSpeed;
     public int health=10;
+    GameObject pHolder;
     ScoreHandlerScript scoreHandler;
+    public Transform[] powerups;
 
     void Start () {
         SaveLoad.Load();
@@ -15,6 +17,8 @@ public class MovementScript : MonoBehaviour {
             GameObject.Find("Player/BulletSpawnLeft").SetActive(false);
         }
         scoreHandler=GameObject.Find("Handlers/ScoreHandler").GetComponent<ScoreHandlerScript>();
+        pHolder=GameObject.Find("Player/PowerupSlot");
+        givePowerup(0);
     }
 
 	// Update is called once per frame
@@ -51,7 +55,7 @@ public class MovementScript : MonoBehaviour {
     }
     void moveIfRequired(){
         rotateIfRequired();
-        Vector3 movementVector=new Vector3(Input.GetAxis("Horizontal"),0,Input.GetAxis("Vertical"))*playerSpeed*Time.deltaTime;
+        Vector3 movementVector=new Vector3(Input.GetAxis("Horizontal")-0.1f,0,Input.GetAxis("Vertical"))*playerSpeed*Time.deltaTime;
         transform.position+=movementVector;
     }
     public void getHurt(int toLose){
@@ -60,5 +64,15 @@ public class MovementScript : MonoBehaviour {
             scoreHandler.claimCombo();
             scoreHandler.die();
         }
+    }
+    public void givePowerup(int id){
+        try{
+            GameObject.Destroy(pHolder.transform.GetChild(0));
+        }catch{}
+        Transform p=Instantiate(powerups[id],transform.position,transform.rotation) as Transform;
+        p.parent=pHolder.transform;
+    }
+    void OnCollisionEnter(Collision c){
+        print("Collided with objevt");
     }
 }

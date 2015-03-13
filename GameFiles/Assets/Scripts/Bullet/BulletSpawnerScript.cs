@@ -18,7 +18,6 @@ public class BulletSpawnerScript : MonoBehaviour {
 	}
 	public void shoot(float offset){
 		if(bulletTicks>=bulletTickLimit){
-			print("Shooting");
 			Vector3 r=transform.rotation.eulerAngles;
 			r.y+=offset;
 			Quaternion rot=Quaternion.Euler(r);
