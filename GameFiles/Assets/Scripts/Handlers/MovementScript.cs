@@ -30,6 +30,10 @@ public class MovementScript : MonoBehaviour {
             isDead=false;
             health=10;
         }
+        if (Input.GetKey(KeyCode.Escape)){
+            print("Leaving");
+            Application.Quit();
+        }
     }  
 
     public void shootIfRequired(){
