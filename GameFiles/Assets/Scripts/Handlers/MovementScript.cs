@@ -9,6 +9,7 @@ public class MovementScript : MonoBehaviour {
     GameObject pHolder;
     ScoreHandlerScript scoreHandler;
     public Transform[] powerups;
+    public Texture2D hover_img;
 
     void Start () {
         SaveLoad.Load();
@@ -31,7 +32,6 @@ public class MovementScript : MonoBehaviour {
             health=10;
         }
         if (Input.GetKey(KeyCode.Escape)){
-            print("Leaving");
             Application.Quit();
         }
     }  
@@ -76,7 +76,10 @@ public class MovementScript : MonoBehaviour {
         Transform p=Instantiate(powerups[id],transform.position,transform.rotation) as Transform;
         p.parent=pHolder.transform;
     }
-    void OnCollisionEnter(Collision c){
-        print("Collided with objevt");
+    void OnMouseEnter(){
+        Cursor.SetCursor(hover_img,new Vector2(16,16),CursorMode.Auto);
+    }
+    void OnMouseExit() {
+        Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
     }
 }

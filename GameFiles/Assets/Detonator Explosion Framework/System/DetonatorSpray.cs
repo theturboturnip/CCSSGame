@@ -59,17 +59,6 @@ public class DetonatorSpray : DetonatorComponent {
 				_tmpScale = _tmpScale * size;
 
 				chunk.transform.localScale = new Vector3(_tmpScale,_tmpScale,_tmpScale);
-
-				if (MyDetonator().upwardsBias > 0f) 
-				{
-					velocityVec = new Vector3(
-						(velocityVec.x / Mathf.Log(MyDetonator().upwardsBias)),
-						(velocityVec.y * Mathf.Log(MyDetonator().upwardsBias)),
-						(velocityVec.z / Mathf.Log(MyDetonator().upwardsBias))
-						);
-				}
-
-				chunk.rigidbody.velocity = Vector3.Scale(randVec.normalized,velocityVec);
 				chunk.rigidbody.velocity = Vector3.Scale(randVec.normalized,velocityVec);
 				Destroy(chunk, (duration * timeScale)); 
 

@@ -14,7 +14,7 @@ public class LightThrobScript : MonoBehaviour {
         float lerp = Mathf.PingPong(Time.time, duration) / duration;
         renderer.material.color = Color.Lerp(colorStart, colorEnd, lerp);
         pointLight.color= Color.Lerp(colorStart, colorEnd, lerp);
-        pointLight.intensity=pointLight.color.g;
+        pointLight.intensity=pointLight.color.g*2;
     }
 
 }

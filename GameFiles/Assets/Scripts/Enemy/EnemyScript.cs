@@ -7,7 +7,7 @@ public class EnemyScript : MonoBehaviour {
     bool isDead=false;
     ScoreHandlerScript scoreHandler;
     public int health=1;
-
+    public Texture2D hover_img;
 	void Start () {
 		scoreHandler=GameObject.Find("Handlers/ScoreHandler").GetComponent<ScoreHandlerScript>();
 	}
@@ -37,4 +37,11 @@ public class EnemyScript : MonoBehaviour {
         GameObject.Destroy(gameObject);
         isDead=true;
 	}
+	void OnMouseEnter(){
+        Cursor.SetCursor(hover_img,new Vector2(16,16),CursorMode.Auto);
+    }
+    void OnMouseExit() {
+        Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+    }
 }
+

@@ -6,7 +6,7 @@ using System.Collections;
 public class DetonatorGlow : DetonatorComponent
 {
 	private float _baseSize = 1f;
-	private float _baseDuration = 1f;
+	private float _baseDuration = 3f;
 	private Vector3 _baseVelocity = new Vector3(0f, 0f, 0f);
 	private Color _baseColor = Color.black;
 	private float _scaledDuration;
@@ -56,7 +56,6 @@ public class DetonatorGlow : DetonatorComponent
 		_glowEmitter.timeScale = timeScale;
 		_glowEmitter.count = 1;
 		_glowEmitter.particleSize = 65f;
-		_glowEmitter.randomRotation = false;
 		_glowEmitter.sizeVariation = 0f;
 		_glowEmitter.velocity = new Vector3(0f, 0f, 0f);
 		_glowEmitter.startRadius = 0f;
@@ -101,7 +100,6 @@ public class DetonatorGlow : DetonatorComponent
 		explodeDelayMax = 0f;
 		color = _baseColor;
 		velocity = _baseVelocity;
-
     }
 
     override public void Explode()

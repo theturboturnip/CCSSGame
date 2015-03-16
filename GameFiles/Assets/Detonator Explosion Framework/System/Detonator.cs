@@ -35,8 +35,85 @@ using System.Collections;
 	or visit my site, listed below.
 	
 	Ben Throop
-	@ben_throop
+	http://variancetheory.com
+	@benimaru
+
 */
+
+/*
+	All pieces of Detonator inherit from this. 
+*/
+public abstract class DetonatorComponent : MonoBehaviour
+{
+	public bool on = true;
+	public bool detonatorControlled = true;
+	
+	 [HideInInspector] 
+	public  float startSize = 1f;
+    public  float size = 1f;
+	
+    public  float explodeDelayMin = 0f;
+    public  float explodeDelayMax = 0f;
+
+	[HideInInspector]  
+	public  float startDuration = 2f;
+	public  float duration = 2f;
+		
+	[HideInInspector]
+	public  float timeScale = 1f;
+	
+	 [HideInInspector] 
+	public  float startDetail = 1f;
+	public  float detail = 1f;
+	
+	 [HideInInspector] 
+	public  Color startColor = Color.white;
+	public  Color color = Color.white;
+	
+	[HideInInspector]
+	public  Vector3 startLocalPosition = Vector3.zero;
+	public  Vector3 localPosition = Vector3.zero;
+	
+	[HideInInspector]
+	public  Vector3 startForce = Vector3.zero;
+	public  Vector3 force = Vector3.zero;
+	
+	[HideInInspector]
+	public  Vector3 startVelocity = Vector3.zero;
+	public  Vector3 velocity = Vector3.zero;
+	
+    public abstract void Explode();
+	
+	//The main Detonator calls this instead of using Awake() or Start() on subcomponents
+	//which ensures it happens when we want.
+	public abstract void Init();
+	
+	public  float detailThreshold;
+
+	/*
+		This exists because Detonator makes relative changes
+		to set values once the game is running, so we need to store their beginning
+		values somewhere to calculate against. An improved design could probably
+		avoid this.
+	*/
+	public void SetStartValues()
+	{
+		startSize = size;
+		startForce = force;
+		startVelocity = velocity;
+		startDuration = duration;
+		startDetail = detail;
+		startColor = color;
+		startLocalPosition = localPosition;
+	}
+	
+	//implement functions to find the Detonator on this GO and get materials if they are defined
+	public Detonator MyDetonator()
+	{
+		Detonator _myDetonator = GetComponent("Detonator") as Detonator;
+		return _myDetonator;
+	}
+}
 
 [AddComponentMenu("Detonator/Detonator")]
 public class Detonator : MonoBehaviour {
@@ -215,7 +292,6 @@ public class Detonator : MonoBehaviour {
 	}
 	
 	private bool _firstComponentUpdate = true;
-
 	void UpdateComponents()
 	{
 		if (_firstComponentUpdate)
@@ -227,25 +303,19 @@ public class Detonator : MonoBehaviour {
 			}
 			_firstComponentUpdate = false;
 		}
-		
+			
 		if (!_firstComponentUpdate)
 		{
-			float s = size / _baseSize;
-			
-			Vector3 sdir = new Vector3(direction.x * s, direction.y * s, direction.z * s);
-			
-			float d = duration / _baseDuration;
-			
 			foreach (DetonatorComponent component in components)
 			{
 				if (component.detonatorControlled)
 				{
-					component.size = component.startSize * s;
-					component.timeScale = d;
+					component.size = component.startSize * (size / _baseSize);
+					component.timeScale = (duration / _baseDuration);
 					component.detail = component.startDetail * detail;
-					component.force = new Vector3(component.startForce.x * s + sdir.x, component.startForce.y * s + sdir.y, component.startForce.z * s + sdir.z );
-					component.velocity = new Vector3(component.startVelocity.x * s + sdir.x, component.startVelocity.y * s + sdir.y, component.startVelocity.z * s + sdir.z );
-					
+					component.force = (component.startForce *  (size /_baseSize)) + (direction * (size /_baseSize));
+					component.velocity = (component.startVelocity *  (size /_baseSize)) + (direction * (size /_baseSize));
+				
 					//take the alpha of detonator color and consider it a weight - 1=use all detonator, 0=use all components
 					component.color = Color.Lerp(component.startColor, color, color.a);
 				}

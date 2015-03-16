@@ -6,9 +6,11 @@ public class UIHandlerScript : MonoBehaviour {
 	ScoreHandlerScript scoreHandler;
 	Text additive,total;
 	BorgHealth health;
-	public Material reticule;
 	MovementScript Player;
 	int maxHealth;
+	float currentCursorIndex=0.0f;
+	public Cursor[] OnEnemy=new Cursor[3],OnPlayer=new Cursor[3],Idle=new Cursor[3];
+	Cursor[] CurrentCursor;
 	// Use this for initialization
 	void Start () {
 		GameObject ScoreHandlerObject=GameObject.Find("Handlers/ScoreHandler"),
@@ -21,6 +23,7 @@ public class UIHandlerScript : MonoBehaviour {
 		total=TotalScoreObject.GetComponent<Text>();
 		health=HealthObject.GetComponent<BorgHealth>();
 		maxHealth=Player.health;
+		CurrentCursor=Idle;
 	}
 	
 	// Update is called once per frame
@@ -30,6 +33,8 @@ public class UIHandlerScript : MonoBehaviour {
 		string totalScoreString=setLength(scoreHandler.totalScore.ToString("00000000"),9);
 		total.text=totalScoreString;
 		health.SetHealth((float)Player.health/(float)maxHealth);
+		//if(Input.GetMouseButtonDown(0))
+			//CursorTick();
 	}
 	string setLength(string toMod,int bits){
 		if (toMod.Length>=bits){

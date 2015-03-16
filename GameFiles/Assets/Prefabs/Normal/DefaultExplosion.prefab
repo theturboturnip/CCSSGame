@@ -8,11 +8,11 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 400000}
-  - 114: {fileID: 11400000}
   - 54: {fileID: 5400000}
   - 135: {fileID: 13500000}
   - 114: {fileID: 11400002}
   - 82: {fileID: 8200000}
+  - 114: {fileID: 11400000}
   m_Layer: 8
   m_Name: DefaultExplosion
   m_TagString: Explosion
@@ -125,16 +125,16 @@ MonoBehaviour:
   size: 3
   color: {r: 1, g: .423000008, b: 0, a: .5}
   explodeOnStart: 1
-  duration: 2
-  detail: 1
+  duration: 3
+  detail: 4
   upwardsBias: 0
-  destroyTime: 1
+  destroyTime: 3
   useWorldSpace: 1
   direction: {x: 0, y: 0, z: 0}
   fireballAMaterial: {fileID: 0}
   fireballBMaterial: {fileID: 0}
-  smokeAMaterial: {fileID: 0}
-  smokeBMaterial: {fileID: 0}
+  smokeAMaterial: {fileID: 2100000, guid: f9f3552a7ee2142a79b808a12d146d3f, type: 2}
+  smokeBMaterial: {fileID: 2100000, guid: f9f3552a7ee2142a79b808a12d146d3f, type: 2}
   shockwaveMaterial: {fileID: 0}
   sparksMaterial: {fileID: 0}
   glowMaterial: {fileID: 0}
@@ -143,7 +143,7 @@ MonoBehaviour:
   autoCreateSparks: 0
   autoCreateShockwave: 0
   autoCreateSmoke: 0
-  autoCreateGlow: 1
+  autoCreateGlow: 0
   autoCreateLight: 1
   autoCreateForce: 0
   autoCreateHeatwave: 0
