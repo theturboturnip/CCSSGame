@@ -9,8 +9,8 @@ public class UIHandlerScript : MonoBehaviour {
 	MovementScript Player;
 	int maxHealth;
 	float currentCursorIndex=0.0f;
-	public Cursor[] OnEnemy=new Cursor[3],OnPlayer=new Cursor[3],Idle=new Cursor[3];
-	Cursor[] CurrentCursor;
+	public Texture2D[] OnEnemy=new Texture2D[3],OnPlayer=new Texture2D[3],Idle=new Texture2D[3];
+	Texture2D[] CurrentCursor;
 	// Use this for initialization
 	void Start () {
 		GameObject ScoreHandlerObject=GameObject.Find("Handlers/ScoreHandler"),
@@ -25,7 +25,26 @@ public class UIHandlerScript : MonoBehaviour {
 		maxHealth=Player.health;
 		CurrentCursor=Idle;
 	}
-	
+	void CursorTick(){
+		currentCursorIndex+=Time.deltaTime*4;
+		if(currentCursorIndex>CurrentCursor.Length){
+			currentCursorIndex=0.0f;
+		}
+		Ray r=Camera.main.ScreenPointToRay(Input.mousePosition);
+		RaycastHit hit;
+		if(Physics.Raycast(r,out hit)){
+			GameObject g=hit.transform.gameObject;
+			CurrentCursor=Idle;
+			if(g.tag=="Player"){
+				CurrentCursor=OnPlayer;
+				currentCursorIndex=0.0f;
+			}else if (g.tag=="Enemy"){
+				CurrentCursor=OnEnemy;
+				currentCursorIndex=0.0f;
+			}
+		}
+		Cursor.SetCursor(CurrentCursor[(int)currentCursorIndex],new Vector2(16,16),CursorMode.Auto);
+	}
 	// Update is called once per frame
 	void Update () {
 		string additiveString=setLength(scoreHandler.additiveScore.ToString("00000"),5)+"*"+setLength(scoreHandler.multiplier.ToString("0.0"),3);
@@ -34,7 +53,7 @@ public class UIHandlerScript : MonoBehaviour {
 		total.text=totalScoreString;
 		health.SetHealth((float)Player.health/(float)maxHealth);
 		//if(Input.GetMouseButtonDown(0))
-			//CursorTick();
+		CursorTick();
 	}
 	string setLength(string toMod,int bits){
 		if (toMod.Length>=bits){

@@ -27,6 +27,8 @@ public class ShopScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		scoreText.text="Upgrade Shop\nTotal Score: "+Game.current.score;
+		if(Input.GetKey(KeyCode.LeftShift))
+			StartGame();
 	}
 	public void BuyUpgrade(string name,Button b){
 		Upgrade toBuy=Game.current.upgrades[0];
@@ -44,16 +46,6 @@ public class ShopScript : MonoBehaviour {
 		}
 	}
 	public void StartGame(){
-		#if UNITY_IPHONE
-			Application.LoadLevel(3);
-			return;
-		#endif
-		#if UNITY_ANDROID
-			Application.LoadLevel(3);
-			return;
-		#endif
-		#if UNITY_STANDALONE
 		Application.LoadLevel(2);
-		#endif
 	}
 }

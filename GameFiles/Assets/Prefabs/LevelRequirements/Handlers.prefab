@@ -469,8 +469,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   OnEnemy:
-  - {fileID: 2800000, guid: 5bfccdb0ada004536a42f9d79250aafd, type: 3}
-  - {fileID: 2800000, guid: fb1ad5f24e43d4f41a776d66e436fd87, type: 3}
+  - {fileID: 2800000, guid: 3350814627bd14ec2a8b340f05e0483c, type: 3}
+  - {fileID: 2800000, guid: 3350814627bd14ec2a8b340f05e0483c, type: 3}
   OnPlayer:
   - {fileID: 2800000, guid: 3350814627bd14ec2a8b340f05e0483c, type: 3}
   Idle:
@@ -878,7 +878,7 @@ RectTransform:
   m_RootOrder: 1
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -188.199997, y: 50.0999985}
+  m_AnchoredPosition: {x: -188.200195, y: 50.0999985}
   m_SizeDelta: {x: 213.136002, y: -51}
   m_Pivot: {x: 0, y: 0}
 --- !u!224 &22400002
@@ -895,7 +895,7 @@ RectTransform:
   m_RootOrder: 2
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -188.199982, y: 12.1000004}
+  m_AnchoredPosition: {x: -188.200195, y: 12.1000004}
   m_SizeDelta: {x: 213.136002, y: -52}
   m_Pivot: {x: 3.16649675e-08, y: 0}
 --- !u!224 &22400004

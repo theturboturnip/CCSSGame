@@ -21,6 +21,8 @@ public class MainMenu2 : MonoBehaviour {
 		canvases[1]=GameObject.Find("LoadGameCanvas");
 		canvases[2]=GameObject.Find("NewGameCanvas");
 		GameObject.Find("LoadGameCanvas/LoadGameDialog/LoadGameData").GetComponent<Text>().text=Game.current.name+"\n\n"+Game.current.score;
+		
+		
 		//Button[] buttons=canvases[0].GetComponentsInChildren<Button>();
 		//buttons[0].onClick.AddListener(() => { this.NewGameButtonClicked();});
 		//buttons[0].onClick.AddListener(NewGameButtonClicked);
@@ -29,7 +31,8 @@ public class MainMenu2 : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		enableCorrectCanvas();
-
+		if(Input.GetKey(KeyCode.LeftShift))
+			Application.LoadLevel(2);
 	}
 	void enableCorrectCanvas(){
 		canvases[0].SetActive(currentMenu==Menu.MainMenu);
