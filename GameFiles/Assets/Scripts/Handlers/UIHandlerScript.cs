@@ -27,9 +27,7 @@ public class UIHandlerScript : MonoBehaviour {
 	}
 	void CursorTick(){
 		currentCursorIndex+=Time.deltaTime*4;
-		if(currentCursorIndex>CurrentCursor.Length){
-			currentCursorIndex=0.0f;
-		}
+		
 		Ray r=Camera.main.ScreenPointToRay(Input.mousePosition);
 		RaycastHit hit;
 		if(Physics.Raycast(r,out hit)){
@@ -42,6 +40,9 @@ public class UIHandlerScript : MonoBehaviour {
 				CurrentCursor=OnEnemy;
 				currentCursorIndex=0.0f;
 			}
+		}
+		if(currentCursorIndex>CurrentCursor.Length){
+			currentCursorIndex=0.0f;
 		}
 		Cursor.SetCursor(CurrentCursor[(int)currentCursorIndex],new Vector2(16,16),CursorMode.Auto);
 	}

@@ -71,7 +71,7 @@ public class MovementScript : MonoBehaviour {
     }
     public void givePowerup(int id){
         try{
-            GameObject.Destroy(pHolder.transform.GetChild(0));
+            Destroy(pHolder.transform.GetChild(0).gameObject);
         }catch{}
         Transform p=Instantiate(powerups[id],transform.position,transform.rotation) as Transform;
         p.parent=pHolder.transform;

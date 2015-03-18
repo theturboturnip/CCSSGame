@@ -4,12 +4,16 @@ using System.Collections;
 public class BulletSpawnerScript : MonoBehaviour {
 	//public string input="Fire1";
 	public Transform bullet;
-    float bulletTicks,bulletTickLimit=12;
+    public float bulletTicks,bulletTickLimit=12;
 
 	GameObject parent;
 	// Use this for initialization
 	void Start () {
-		parent=transform.parent.gameObject;
+		try{
+			parent=transform.parent.gameObject;
+		}catch{
+			parent=gameObject;
+		}
 	}
 	
 	// Update is called once per frame
