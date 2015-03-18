@@ -11,7 +11,6 @@ public class EnemyScript : MonoBehaviour {
     public float dropChance=2.0f;
 	void Start () {
 		scoreHandler=GameObject.Find("Handlers/ScoreHandler").GetComponent<ScoreHandlerScript>();
-		//powerup.gameObject.GetComponent<PowerUpItemScript>().id=p_id;
 	}
 	void Update(){
 		transform.position=new Vector3(transform.position.x,0f,transform.position.z);

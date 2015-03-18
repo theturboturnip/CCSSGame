@@ -8,7 +8,7 @@ public class BulletScript : MonoBehaviour {
     GameObject model;
     Vector3 direction;
     LineRenderer line;
-	// Use this for initialization
+
 	void Start () {
         line=gameObject.GetComponent<LineRenderer>();
         line.enabled=false;
@@ -17,19 +17,17 @@ public class BulletScript : MonoBehaviour {
 		direction=transform.TransformDirection(Vector3.forward*50f);	
 	}
 	void End (int explode,Vector3 collisionPos) {
-		//print(ticks);
 		if(endExplosion!=null&&explode==1)
 			Instantiate(endExplosion, transform.position, transform.rotation);
 		GameObject.Destroy(gameObject);
 	}
-	// Update is called once per frame
+
 	void Update () {
 		ticks--;
 		if(ticks<=0) End(0,Vector3.zero);
 		transform.Translate(direction*Time.deltaTime,Space.World);
-		Ray ray=new Ray(transform.position/*-transform.forward*0.5f*/,transform.forward);
+		Ray ray=new Ray(transform.position,transform.forward);
 		Vector3 start=ray.GetPoint(0f),end=ray.GetPoint(2f);
-
 		RaycastHit hit;
 		Physics.Raycast(ray, out hit, 1.0F);
 		if(hit.transform!=null)

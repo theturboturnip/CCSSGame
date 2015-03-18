@@ -21,7 +21,6 @@ public class MovementScript : MonoBehaviour {
         pHolder=GameObject.Find("Player/PowerupSlot");
     }
 
-	// Update is called once per frame
 	void Update () {
 	    moveIfRequired();
         shootIfRequired();
