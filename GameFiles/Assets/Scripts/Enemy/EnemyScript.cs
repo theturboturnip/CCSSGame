@@ -8,9 +8,10 @@ public class EnemyScript : MonoBehaviour {
     ScoreHandlerScript scoreHandler;
     public int health=1,p_id=0;
     public Texture2D hover_img;
+    public float dropChance=2.0f;
 	void Start () {
 		scoreHandler=GameObject.Find("Handlers/ScoreHandler").GetComponent<ScoreHandlerScript>();
-		powerup.gameObject.GetComponent<PowerUpItemScript>().id=p_id;
+		//powerup.gameObject.GetComponent<PowerUpItemScript>().id=p_id;
 	}
 	void Update(){
 		transform.position=new Vector3(transform.position.x,0f,transform.position.z);
@@ -31,13 +32,16 @@ public class EnemyScript : MonoBehaviour {
 	void die(string causeOfDeath){
 		Instantiate(explosion,transform.position,transform.rotation);
 		float r=Random.Range(0.0f,10.0f);
-		print(r);
-		if(r<2.0f)
-			Instantiate(powerup,transform.position,Quaternion.identity);
+		if(r<=dropChance){
+			Transform g=Instantiate(powerup,transform.position,Quaternion.identity) as Transform;
+			PowerUpItemScript p=g.gameObject.GetComponent<PowerUpItemScript>();
+			p.id=p_id;
+			print(p.id);
+		}
 	    float multiplier=0.1f;
 	    int worth=1;	    
 	    scoreHandler.EnemyDestroyed(worth,multiplier);
-        GameObject.Destroy(gameObject);
+        Destroy(gameObject);
         isDead=true;
 	}
 }

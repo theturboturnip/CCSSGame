@@ -10,6 +10,7 @@ public class PowerUp2 : PowerUpBaseScript {
 	
 	// Update is called once per frame
 	void Update () {
+		transform.localPosition=Vector3.zero;
 	}
 	public override void getHit(){
 		health--;

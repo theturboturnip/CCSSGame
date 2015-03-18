@@ -74,11 +74,7 @@ public class MovementScript : MonoBehaviour {
         }catch{}
         Transform p=Instantiate(powerups[id],transform.position,transform.rotation) as Transform;
         p.parent=pHolder.transform;
+        print(id);
     }
-    void OnMouseEnter(){
-        Cursor.SetCursor(hover_img,new Vector2(16,16),CursorMode.Auto);
-    }
-    void OnMouseExit() {
-        Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
-    }
+
 }
