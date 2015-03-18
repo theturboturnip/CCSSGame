@@ -450,6 +450,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 400002, guid: d727ee6003c5747fd9900a95aa70c5ef, type: 2}
+  bulletTicks: 0
+  bulletTickLimit: 12
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -462,6 +464,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 400002, guid: d727ee6003c5747fd9900a95aa70c5ef, type: 2}
+  bulletTicks: 0
+  bulletTickLimit: 12
 --- !u!114 &11400006
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -474,6 +478,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 400002, guid: d727ee6003c5747fd9900a95aa70c5ef, type: 2}
+  bulletTicks: 0
+  bulletTickLimit: 12
 --- !u!114 &11400008
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -493,6 +499,7 @@ MonoBehaviour:
   powerups:
   - {fileID: 400000, guid: 7a598717ded698c4dbdd57c2260fa1e1, type: 2}
   - {fileID: 400000, guid: 6a95cdc9d59dd46d791a5d6eef12b72c, type: 2}
+  - {fileID: 400002, guid: 719692bfb9230184b82b38beae3c67cd, type: 2}
   hover_img: {fileID: 2800000, guid: 3350814627bd14ec2a8b340f05e0483c, type: 3}
 --- !u!114 &11400010
 MonoBehaviour:

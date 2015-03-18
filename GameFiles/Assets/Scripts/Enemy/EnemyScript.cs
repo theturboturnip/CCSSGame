@@ -10,7 +10,7 @@ public class EnemyScript : MonoBehaviour {
     public Texture2D hover_img;
 	void Start () {
 		scoreHandler=GameObject.Find("Handlers/ScoreHandler").GetComponent<ScoreHandlerScript>();
-		powerup.gameObject.GetComponent<PowerUpBaseScript>().id=p_id;
+		powerup.gameObject.GetComponent<PowerUpItemScript>().id=p_id;
 	}
 	void Update(){
 		transform.position=new Vector3(transform.position.x,0f,transform.position.z);

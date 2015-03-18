@@ -40,10 +40,11 @@ public class BulletScript : MonoBehaviour {
 	}
 	void HandleCollision(RaycastHit c){
 		GameObject go=c.transform.gameObject;
-		bool canCollide=(go!=Shooter&&go!=null)&&go.tag!="Explosion"&&go.layer!=LayerMask.NameToLayer("Powerup");
+		bool canCollide=(go!=Shooter&&go!=null)&&go.tag!="Explosion";
 		if(canCollide){
 			if(go.tag=="Enemy") go.GetComponent<EnemyScript>().getHurt(1,go);
-			if(go.tag=="Player") go.GetComponent<MovementScript>().getHurt(1);
+			else if (go.tag=="Powerup") go.GetComponent<PowerUpBaseScript>().getHit();
+			else if(go.tag=="Player") go.GetComponent<MovementScript>().getHurt(1);
 			End(1,c.point);
 		}
 	}

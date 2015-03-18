@@ -1,0 +1,297 @@
+Initialize engine version: 4.6.0f3 (30840d631a27)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: AMD Radeon HD 7340 Graphics (ID=0x9808)
+    Vendor:   ATI
+    VRAM:     373 MB
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\Microsoft\Documents\GitHub\CCSSGame\AssimilationGame_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\Microsoft\Documents\GitHub\CCSSGame\AssimilationGame_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\Microsoft\Documents\GitHub\CCSSGame\AssimilationGame_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\Microsoft\Documents\GitHub\CCSSGame\AssimilationGame_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\Microsoft\Documents\GitHub\CCSSGame\AssimilationGame_Data\Managed\Assembly-UnityScript-firstpass.dll (this message is harmless)
+Loading C:\Users\Microsoft\Documents\GitHub\CCSSGame\AssimilationGame_Data\Managed\Assembly-UnityScript-firstpass.dll into Unity Child Domain
+Platform assembly: C:\Users\Microsoft\Documents\GitHub\CCSSGame\AssimilationGame_Data\Managed\Assembly-UnityScript.dll (this message is harmless)
+Loading C:\Users\Microsoft\Documents\GitHub\CCSSGame\AssimilationGame_Data\Managed\Assembly-UnityScript.dll into Unity Child Domain
+Platform assembly: C:\Users\Microsoft\Documents\GitHub\CCSSGame\AssimilationGame_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\Microsoft\Documents\GitHub\CCSSGame\AssimilationGame_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+- Completed reload, in  0.681 seconds
+desktop: 1366x768 60Hz; virtual: 1366x768 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+Platform assembly: C:\Users\Microsoft\Documents\GitHub\CCSSGame\AssimilationGame_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\Microsoft\Documents\GitHub\CCSSGame\AssimilationGame_Data\Managed\System.dll (this message is harmless)
+WARNING: Shader Unsupported: 'Outlined/Silhouetted Diffuse' - Pass 'OUTLINE' shader state not supported
+UnloadTime: 9.667233 ms
+System memory in use before: 12.7 MB.
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+System memory in use after: 12.6 MB.
+
+Unloading 6 unused Assets to reduce memory usage. Loaded Objects now: 402.
+Total: 4.857755 ms (FindLiveObjects: 0.112844 ms CreateObjectMapping: 0.065172 ms MarkObjects: 0.567240 ms  DeleteObjects: 0.073017 ms)
+
+0.4112577
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+UnityEngine.MonoBehaviour:print(Object) (at C:\BuildAgent\work\d63dfc6385190b60\artifacts\StandalonePlayerGenerated\UnityEngineMonoBehaviour.cs:108)
+EnemyScript:die(String) (at /Users/samuel/Documents/CCSSGame/GameFiles/Assets/Scripts/Enemy/EnemyScript.cs:34)
+EnemyScript:getHurt(Int32, GameObject) (at /Users/samuel/Documents/CCSSGame/GameFiles/Assets/Scripts/Enemy/EnemyScript.cs:28)
+BulletScript:HandleCollision(RaycastHit) (at /Users/samuel/Documents/CCSSGame/GameFiles/Assets/Scripts/Bullet/BulletScript.cs:45)
+BulletScript:Update() (at /Users/samuel/Documents/CCSSGame/GameFiles/Assets/Scripts/Bullet/BulletScript.cs:36)
+ 
+(Filename: C Line: 0)
+
+8.615763
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+UnityEngine.MonoBehaviour:print(Object) (at C:\BuildAgent\work\d63dfc6385190b60\artifacts\StandalonePlayerGenerated\UnityEngineMonoBehaviour.cs:108)
+EnemyScript:die(String) (at /Users/samuel/Documents/CCSSGame/GameFiles/Assets/Scripts/Enemy/EnemyScript.cs:34)
+EnemyScript:getHurt(Int32, GameObject) (at /Users/samuel/Documents/CCSSGame/GameFiles/Assets/Scripts/Enemy/EnemyScript.cs:28)
+BulletScript:HandleCollision(RaycastHit) (at /Users/samuel/Documents/CCSSGame/GameFiles/Assets/Scripts/Bullet/BulletScript.cs:45)
+BulletScript:Update() (at /Users/samuel/Documents/CCSSGame/GameFiles/Assets/Scripts/Bullet/BulletScript.cs:36)
+ 
+(Filename: C Line: 0)
+
+4.516034
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+UnityEngine.MonoBehaviour:print(Object) (at C:\BuildAgent\work\d63dfc6385190b60\artifacts\StandalonePlayerGenerated\UnityEngineMonoBehaviour.cs:108)
+EnemyScript:die(String) (at /Users/samuel/Documents/CCSSGame/GameFiles/Assets/Scripts/Enemy/EnemyScript.cs:34)
+EnemyScript:getHurt(Int32, GameObject) (at /Users/samuel/Documents/CCSSGame/GameFiles/Assets/Scripts/Enemy/EnemyScript.cs:28)
+BulletScript:HandleCollision(RaycastHit) (at /Users/samuel/Documents/CCSSGame/GameFiles/Assets/Scripts/Bullet/BulletScript.cs:45)
+BulletScript:Update() (at /Users/samuel/Documents/CCSSGame/GameFiles/Assets/Scripts/Bullet/BulletScript.cs:36)
+ 
+(Filename: C Line: 0)
+
+6.012811
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+UnityEngine.MonoBehaviour:print(Object) (at C:\BuildAgent\work\d63dfc6385190b60\artifacts\StandalonePlayerGenerated\UnityEngineMonoBehaviour.cs:108)
+EnemyScript:die(String) (at /Users/samuel/Documents/CCSSGame/GameFiles/Assets/Scripts/Enemy/EnemyScript.cs:34)
+EnemyScript:getHurt(Int32, GameObject) (at /Users/samuel/Documents/CCSSGame/GameFiles/Assets/Scripts/Enemy/EnemyScript.cs:28)
+BulletScript:HandleCollision(RaycastHit) (at /Users/samuel/Documents/CCSSGame/GameFiles/Assets/Scripts/Bullet/BulletScript.cs:45)
+BulletScript:Update() (at /Users/samuel/Documents/CCSSGame/GameFiles/Assets/Scripts/Bullet/BulletScript.cs:36)
+ 
+(Filename: C Line: 0)
+
+5.647189
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+UnityEngine.MonoBehaviour:print(Object) (at C:\BuildAgent\work\d63dfc6385190b60\artifacts\StandalonePlayerGenerated\UnityEngineMonoBehaviour.cs:108)
+EnemyScript:die(String) (at /Users/samuel/Documents/CCSSGame/GameFiles/Assets/Scripts/Enemy/EnemyScript.cs:34)
+EnemyScript:getHurt(Int32, GameObject) (at /Users/samuel/Documents/CCSSGame/GameFiles/Assets/Scripts/Enemy/EnemyScript.cs:28)
+BulletScript:HandleCollision(RaycastHit) (at /Users/samuel/Documents/CCSSGame/GameFiles/Assets/Scripts/Bullet/BulletScript.cs:45)
+BulletScript:Update() (at /Users/samuel/Documents/CCSSGame/GameFiles/Assets/Scripts/Bullet/BulletScript.cs:36)
+ 
+(Filename: C Line: 0)
+
+7.40059
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+UnityEngine.MonoBehaviour:print(Object) (at C:\BuildAgent\work\d63dfc6385190b60\artifacts\StandalonePlayerGenerated\UnityEngineMonoBehaviour.cs:108)
+EnemyScript:die(String) (at /Users/samuel/Documents/CCSSGame/GameFiles/Assets/Scripts/Enemy/EnemyScript.cs:34)
+EnemyScript:getHurt(Int32, GameObject) (at /Users/samuel/Documents/CCSSGame/GameFiles/Assets/Scripts/Enemy/EnemyScript.cs:28)
+BulletScript:HandleCollision(RaycastHit) (at /Users/samuel/Documents/CCSSGame/GameFiles/Assets/Scripts/Bullet/BulletScript.cs:45)
+BulletScript:Update() (at /Users/samuel/Documents/CCSSGame/GameFiles/Assets/Scripts/Bullet/BulletScript.cs:36)
+ 
+(Filename: C Line: 0)
+
+9.271507
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+UnityEngine.MonoBehaviour:print(Object) (at C:\BuildAgent\work\d63dfc6385190b60\artifacts\StandalonePlayerGenerated\UnityEngineMonoBehaviour.cs:108)
+EnemyScript:die(String) (at /Users/samuel/Documents/CCSSGame/GameFiles/Assets/Scripts/Enemy/EnemyScript.cs:34)
+EnemyScript:getHurt(Int32, GameObject) (at /Users/samuel/Documents/CCSSGame/GameFiles/Assets/Scripts/Enemy/EnemyScript.cs:28)
+BulletScript:HandleCollision(RaycastHit) (at /Users/samuel/Documents/CCSSGame/GameFiles/Assets/Scripts/Bullet/BulletScript.cs:45)
+BulletScript:Update() (at /Users/samuel/Documents/CCSSGame/GameFiles/Assets/Scripts/Bullet/BulletScript.cs:36)
+ 
+(Filename: C Line: 0)
+
+5.153594
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+UnityEngine.MonoBehaviour:print(Object) (at C:\BuildAgent\work\d63dfc6385190b60\artifacts\StandalonePlayerGenerated\UnityEngineMonoBehaviour.cs:108)
+EnemyScript:die(String) (at /Users/samuel/Documents/CCSSGame/GameFiles/Assets/Scripts/Enemy/EnemyScript.cs:34)
+EnemyScript:getHurt(Int32, GameObject) (at /Users/samuel/Documents/CCSSGame/GameFiles/Assets/Scripts/Enemy/EnemyScript.cs:28)
+BulletScript:HandleCollision(RaycastHit) (at /Users/samuel/Documents/CCSSGame/GameFiles/Assets/Scripts/Bullet/BulletScript.cs:45)
+BulletScript:Update() (at /Users/samuel/Documents/CCSSGame/GameFiles/Assets/Scripts/Bullet/BulletScript.cs:36)
+ 
+(Filename: C Line: 0)
+
+1.277919
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+UnityEngine.MonoBehaviour:print(Object) (at C:\BuildAgent\work\d63dfc6385190b60\artifacts\StandalonePlayerGenerated\UnityEngineMonoBehaviour.cs:108)
+EnemyScript:die(String) (at /Users/samuel/Documents/CCSSGame/GameFiles/Assets/Scripts/Enemy/EnemyScript.cs:34)
+EnemyScript:getHurt(Int32, GameObject) (at /Users/samuel/Documents/CCSSGame/GameFiles/Assets/Scripts/Enemy/EnemyScript.cs:28)
+BulletScript:HandleCollision(RaycastHit) (at /Users/samuel/Documents/CCSSGame/GameFiles/Assets/Scripts/Bullet/BulletScript.cs:45)
+BulletScript:Update() (at /Users/samuel/Documents/CCSSGame/GameFiles/Assets/Scripts/Bullet/BulletScript.cs:36)
+ 
+(Filename: C Line: 0)
+
+1.794121
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+UnityEngine.MonoBehaviour:print(Object) (at C:\BuildAgent\work\d63dfc6385190b60\artifacts\StandalonePlayerGenerated\UnityEngineMonoBehaviour.cs:108)
+EnemyScript:die(String) (at /Users/samuel/Documents/CCSSGame/GameFiles/Assets/Scripts/Enemy/EnemyScript.cs:34)
+EnemyScript:getHurt(Int32, GameObject) (at /Users/samuel/Documents/CCSSGame/GameFiles/Assets/Scripts/Enemy/EnemyScript.cs:28)
+BulletScript:HandleCollision(RaycastHit) (at /Users/samuel/Documents/CCSSGame/GameFiles/Assets/Scripts/Bullet/BulletScript.cs:45)
+BulletScript:Update() (at /Users/samuel/Documents/CCSSGame/GameFiles/Assets/Scripts/Bullet/BulletScript.cs:36)
+ 
+(Filename: C Line: 0)
+
+4.400365
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+UnityEngine.MonoBehaviour:print(Object) (at C:\BuildAgent\work\d63dfc6385190b60\artifacts\StandalonePlayerGenerated\UnityEngineMonoBehaviour.cs:108)
+EnemyScript:die(String) (at /Users/samuel/Documents/CCSSGame/GameFiles/Assets/Scripts/Enemy/EnemyScript.cs:34)
+EnemyScript:getHurt(Int32, GameObject) (at /Users/samuel/Documents/CCSSGame/GameFiles/Assets/Scripts/Enemy/EnemyScript.cs:28)
+BulletScript:HandleCollision(RaycastHit) (at /Users/samuel/Documents/CCSSGame/GameFiles/Assets/Scripts/Bullet/BulletScript.cs:45)
+BulletScript:Update() (at /Users/samuel/Documents/CCSSGame/GameFiles/Assets/Scripts/Bullet/BulletScript.cs:36)
+ 
+(Filename: C Line: 0)
+
+8.915677
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+UnityEngine.MonoBehaviour:print(Object) (at C:\BuildAgent\work\d63dfc6385190b60\artifacts\StandalonePlayerGenerated\UnityEngineMonoBehaviour.cs:108)
+EnemyScript:die(String) (at /Users/samuel/Documents/CCSSGame/GameFiles/Assets/Scripts/Enemy/EnemyScript.cs:34)
+EnemyScript:getHurt(Int32, GameObject) (at /Users/samuel/Documents/CCSSGame/GameFiles/Assets/Scripts/Enemy/EnemyScript.cs:28)
+BulletScript:HandleCollision(RaycastHit) (at /Users/samuel/Documents/CCSSGame/GameFiles/Assets/Scripts/Bullet/BulletScript.cs:45)
+BulletScript:Update() (at /Users/samuel/Documents/CCSSGame/GameFiles/Assets/Scripts/Bullet/BulletScript.cs:36)
+ 
+(Filename: C Line: 0)
+
+8.625327
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+UnityEngine.MonoBehaviour:print(Object) (at C:\BuildAgent\work\d63dfc6385190b60\artifacts\StandalonePlayerGenerated\UnityEngineMonoBehaviour.cs:108)
+EnemyScript:die(String) (at /Users/samuel/Documents/CCSSGame/GameFiles/Assets/Scripts/Enemy/EnemyScript.cs:34)
+EnemyScript:getHurt(Int32, GameObject) (at /Users/samuel/Documents/CCSSGame/GameFiles/Assets/Scripts/Enemy/EnemyScript.cs:28)
+BulletScript:HandleCollision(RaycastHit) (at /Users/samuel/Documents/CCSSGame/GameFiles/Assets/Scripts/Bullet/BulletScript.cs:45)
+BulletScript:Update() (at /Users/samuel/Documents/CCSSGame/GameFiles/Assets/Scripts/Bullet/BulletScript.cs:36)
+ 
+(Filename: C Line: 0)
+
+7.457742
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+UnityEngine.MonoBehaviour:print(Object) (at C:\BuildAgent\work\d63dfc6385190b60\artifacts\StandalonePlayerGenerated\UnityEngineMonoBehaviour.cs:108)
+EnemyScript:die(String) (at /Users/samuel/Documents/CCSSGame/GameFiles/Assets/Scripts/Enemy/EnemyScript.cs:34)
+EnemyScript:getHurt(Int32, GameObject) (at /Users/samuel/Documents/CCSSGame/GameFiles/Assets/Scripts/Enemy/EnemyScript.cs:28)
+BulletScript:HandleCollision(RaycastHit) (at /Users/samuel/Documents/CCSSGame/GameFiles/Assets/Scripts/Bullet/BulletScript.cs:45)
+BulletScript:Update() (at /Users/samuel/Documents/CCSSGame/GameFiles/Assets/Scripts/Bullet/BulletScript.cs:36)
+ 
+(Filename: C Line: 0)
+
+6.015349
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+UnityEngine.MonoBehaviour:print(Object) (at C:\BuildAgent\work\d63dfc6385190b60\artifacts\StandalonePlayerGenerated\UnityEngineMonoBehaviour.cs:108)
+EnemyScript:die(String) (at /Users/samuel/Documents/CCSSGame/GameFiles/Assets/Scripts/Enemy/EnemyScript.cs:34)
+EnemyScript:getHurt(Int32, GameObject) (at /Users/samuel/Documents/CCSSGame/GameFiles/Assets/Scripts/Enemy/EnemyScript.cs:28)
+BulletScript:HandleCollision(RaycastHit) (at /Users/samuel/Documents/CCSSGame/GameFiles/Assets/Scripts/Bullet/BulletScript.cs:45)
+BulletScript:Update() (at /Users/samuel/Documents/CCSSGame/GameFiles/Assets/Scripts/Bullet/BulletScript.cs:36)
+ 
+(Filename: C Line: 0)
+
+6.14861
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+UnityEngine.MonoBehaviour:print(Object) (at C:\BuildAgent\work\d63dfc6385190b60\artifacts\StandalonePlayerGenerated\UnityEngineMonoBehaviour.cs:108)
+EnemyScript:die(String) (at /Users/samuel/Documents/CCSSGame/GameFiles/Assets/Scripts/Enemy/EnemyScript.cs:34)
+EnemyScript:getHurt(Int32, GameObject) (at /Users/samuel/Documents/CCSSGame/GameFiles/Assets/Scripts/Enemy/EnemyScript.cs:28)
+BulletScript:HandleCollision(RaycastHit) (at /Users/samuel/Documents/CCSSGame/GameFiles/Assets/Scripts/Bullet/BulletScript.cs:45)
+BulletScript:Update() (at /Users/samuel/Documents/CCSSGame/GameFiles/Assets/Scripts/Bullet/BulletScript.cs:36)
+ 
+(Filename: C Line: 0)
+
+8.872856
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+UnityEngine.MonoBehaviour:print(Object) (at C:\BuildAgent\work\d63dfc6385190b60\artifacts\StandalonePlayerGenerated\UnityEngineMonoBehaviour.cs:108)
+EnemyScript:die(String) (at /Users/samuel/Documents/CCSSGame/GameFiles/Assets/Scripts/Enemy/EnemyScript.cs:34)
+EnemyScript:getHurt(Int32, GameObject) (at /Users/samuel/Documents/CCSSGame/GameFiles/Assets/Scripts/Enemy/EnemyScript.cs:28)
+BulletScript:HandleCollision(RaycastHit) (at /Users/samuel/Documents/CCSSGame/GameFiles/Assets/Scripts/Bullet/BulletScript.cs:45)
+BulletScript:Update() (at /Users/samuel/Documents/CCSSGame/GameFiles/Assets/Scripts/Bullet/BulletScript.cs:36)
+ 
+(Filename: C Line: 0)
+
+8.916679
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+UnityEngine.MonoBehaviour:print(Object) (at C:\BuildAgent\work\d63dfc6385190b60\artifacts\StandalonePlayerGenerated\UnityEngineMonoBehaviour.cs:108)
+EnemyScript:die(String) (at /Users/samuel/Documents/CCSSGame/GameFiles/Assets/Scripts/Enemy/EnemyScript.cs:34)
+EnemyScript:getHurt(Int32, GameObject) (at /Users/samuel/Documents/CCSSGame/GameFiles/Assets/Scripts/Enemy/EnemyScript.cs:28)
+BulletScript:HandleCollision(RaycastHit) (at /Users/samuel/Documents/CCSSGame/GameFiles/Assets/Scripts/Bullet/BulletScript.cs:45)
+BulletScript:Update() (at /Users/samuel/Documents/CCSSGame/GameFiles/Assets/Scripts/Bullet/BulletScript.cs:36)
+ 
+(Filename: C Line: 0)
+
+1.210941
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+UnityEngine.MonoBehaviour:print(Object) (at C:\BuildAgent\work\d63dfc6385190b60\artifacts\StandalonePlayerGenerated\UnityEngineMonoBehaviour.cs:108)
+EnemyScript:die(String) (at /Users/samuel/Documents/CCSSGame/GameFiles/Assets/Scripts/Enemy/EnemyScript.cs:34)
+EnemyScript:getHurt(Int32, GameObject) (at /Users/samuel/Documents/CCSSGame/GameFiles/Assets/Scripts/Enemy/EnemyScript.cs:28)
+BulletScript:HandleCollision(RaycastHit) (at /Users/samuel/Documents/CCSSGame/GameFiles/Assets/Scripts/Bullet/BulletScript.cs:45)
+BulletScript:Update() (at /Users/samuel/Documents/CCSSGame/GameFiles/Assets/Scripts/Bullet/BulletScript.cs:36)
+ 
+(Filename: C Line: 0)
+
+4.248752
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+UnityEngine.MonoBehaviour:print(Object) (at C:\BuildAgent\work\d63dfc6385190b60\artifacts\StandalonePlayerGenerated\UnityEngineMonoBehaviour.cs:108)
+EnemyScript:die(String) (at /Users/samuel/Documents/CCSSGame/GameFiles/Assets/Scripts/Enemy/EnemyScript.cs:34)
+EnemyScript:getHurt(Int32, GameObject) (at /Users/samuel/Documents/CCSSGame/GameFiles/Assets/Scripts/Enemy/EnemyScript.cs:28)
+BulletScript:HandleCollision(RaycastHit) (at /Users/samuel/Documents/CCSSGame/GameFiles/Assets/Scripts/Bullet/BulletScript.cs:45)
+BulletScript:Update() (at /Users/samuel/Documents/CCSSGame/GameFiles/Assets/Scripts/Bullet/BulletScript.cs:36)
+ 
+(Filename: C Line: 0)
+
+5.099031
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+UnityEngine.MonoBehaviour:print(Object) (at C:\BuildAgent\work\d63dfc6385190b60\artifacts\StandalonePlayerGenerated\UnityEngineMonoBehaviour.cs:108)
+EnemyScript:die(String) (at /Users/samuel/Documents/CCSSGame/GameFiles/Assets/Scripts/Enemy/EnemyScript.cs:34)
+EnemyScript:getHurt(Int32, GameObject) (at /Users/samuel/Documents/CCSSGame/GameFiles/Assets/Scripts/Enemy/EnemyScript.cs:28)
+BulletScript:HandleCollision(RaycastHit) (at /Users/samuel/Documents/CCSSGame/GameFiles/Assets/Scripts/Bullet/BulletScript.cs:45)
+BulletScript:Update() (at /Users/samuel/Documents/CCSSGame/GameFiles/Assets/Scripts/Bullet/BulletScript.cs:36)
+ 
+(Filename: C Line: 0)
+
+0.8417332
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+UnityEngine.MonoBehaviour:print(Object) (at C:\BuildAgent\work\d63dfc6385190b60\artifacts\StandalonePlayerGenerated\UnityEngineMonoBehaviour.cs:108)
+EnemyScript:die(String) (at /Users/samuel/Documents/CCSSGame/GameFiles/Assets/Scripts/Enemy/EnemyScript.cs:34)
+EnemyScript:getHurt(Int32, GameObject) (at /Users/samuel/Documents/CCSSGame/GameFiles/Assets/Scripts/Enemy/EnemyScript.cs:28)
+BulletScript:HandleCollision(RaycastHit) (at /Users/samuel/Documents/CCSSGame/GameFiles/Assets/Scripts/Bullet/BulletScript.cs:45)
+BulletScript:Update() (at /Users/samuel/Documents/CCSSGame/GameFiles/Assets/Scripts/Bullet/BulletScript.cs:36)
+ 
+(Filename: C Line: 0)
+
+1.153886
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+UnityEngine.MonoBehaviour:print(Object) (at C:\BuildAgent\work\d63dfc6385190b60\artifacts\StandalonePlayerGenerated\UnityEngineMonoBehaviour.cs:108)
+EnemyScript:die(String) (at /Users/samuel/Documents/CCSSGame/GameFiles/Assets/Scripts/Enemy/EnemyScript.cs:34)
+EnemyScript:getHurt(Int32, GameObject) (at /Users/samuel/Documents/CCSSGame/GameFiles/Assets/Scripts/Enemy/EnemyScript.cs:28)
+BulletScript:HandleCollision(RaycastHit) (at /Users/samuel/Documents/CCSSGame/GameFiles/Assets/Scripts/Bullet/BulletScript.cs:45)
+BulletScript:Update() (at /Users/samuel/Documents/CCSSGame/GameFiles/Assets/Scripts/Bullet/BulletScript.cs:36)
+ 
+(Filename: C Line: 0)
+
+9.613525
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+UnityEngine.MonoBehaviour:print(Object) (at C:\BuildAgent\work\d63dfc6385190b60\artifacts\StandalonePlayerGenerated\UnityEngineMonoBehaviour.cs:108)
+EnemyScript:die(String) (at /Users/samuel/Documents/CCSSGame/GameFiles/Assets/Scripts/Enemy/EnemyScript.cs:34)
+EnemyScript:getHurt(Int32, GameObject) (at /Users/samuel/Documents/CCSSGame/GameFiles/Assets/Scripts/Enemy/EnemyScript.cs:28)
+BulletScript:HandleCollision(RaycastHit) (at /Users/samuel/Documents/CCSSGame/GameFiles/Assets/Scripts/Bullet/BulletScript.cs:45)
+BulletScript:Update() (at /Users/samuel/Documents/CCSSGame/GameFiles/Assets/Scripts/Bullet/BulletScript.cs:36)
+ 
+(Filename: C Line: 0)
+

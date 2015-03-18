@@ -19,7 +19,6 @@ public class MovementScript : MonoBehaviour {
         }
         scoreHandler=GameObject.Find("Handlers/ScoreHandler").GetComponent<ScoreHandlerScript>();
         pHolder=GameObject.Find("Player/PowerupSlot");
-        givePowerup(0);
     }
 
 	// Update is called once per frame
