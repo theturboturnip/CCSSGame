@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ShadersMapper xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <MaterialsMapping />
+  <ShadersMapping>
+    <ShaderMapping>
+      <SrcShader>VertexLit</SrcShader>
+      <DstShader>Linear Lighting/VertexLit CG</DstShader>
+    </ShaderMapping>
+    <ShaderMapping>
+      <SrcShader>Transparent/VertexLit</SrcShader>
+      <DstShader>Linear Lighting/Transparent/VertexLit CG</DstShader>
+    </ShaderMapping>
+    <ShaderMapping>
+      <SrcShader>Transparent/Cutout/VertexLit</SrcShader>
+      <DstShader>Linear Lighting/Transparent/Cutout/VertexLit CG</DstShader>
+    </ShaderMapping>
+    <ShaderMapping>
+      <SrcShader>Self-Illumin/VertexLit</SrcShader>
+      <DstShader>Linear Lighting/Self-Illumin/VertexLit CG</DstShader>
+    </ShaderMapping>
+    <ShaderMapping>
+      <SrcShader>Mobile/Unlit (Supports Lightmap)</SrcShader>
+      <DstShader>Linear Lighting/Mobile/Unlit (Supports Lightmap) CG</DstShader>
+    </ShaderMapping>
+    <ShaderMapping>
+      <SrcShader>Reflective/VertexLit</SrcShader>
+      <DstShader>Linear Lighting/Reflective/VertexLit CG</DstShader>
+    </ShaderMapping>
+    <ShaderMapping>
+      <SrcShader>Mobile/Skybox</SrcShader>
+      <DstShader>Mobile/Skybox</DstShader>
+    </ShaderMapping>
+    <ShaderMapping>
+      <SrcShader>Reflective/Bumped VertexLit</SrcShader>
+      <DstShader>Linear Lighting/Reflective/Bumped Diffuse</DstShader>
+    </ShaderMapping>
+    <ShaderMapping>
+      <SrcShader>Mobile/VertexLit</SrcShader>
+      <DstShader>Linear Lighting/VertexLit CG</DstShader>
+    </ShaderMapping>
+    <ShaderMapping>
+      <SrcShader>Legacy Shaders/Lightmapped/VertexLit</SrcShader>
+      <DstShader>Linear Lighting/Mobile/Unlit (Supports Lightmap) CG</DstShader>
+    </ShaderMapping>
+    <ShaderMapping>
+      <SrcShader>Mobile/Particles/Alpha Blended</SrcShader>
+      <DstShader>Mobile/Particles/Alpha Blended</DstShader>
+    </ShaderMapping>
+    <ShaderMapping>
+      <SrcShader>Mobile/Particles/Additive</SrcShader>
+      <DstShader>Mobile/Particles/Additive</DstShader>
+    </ShaderMapping>
+    <ShaderMapping>
+      <SrcShader>Mobile/Particles/VertexLit Blended</SrcShader>
+      <DstShader>Mobile/Particles/VertexLit Blended</DstShader>
+    </ShaderMapping>
+    <ShaderMapping>
+      <SrcShader>Mobile/Particles/Multiply</SrcShader>
+      <DstShader>Mobile/Particles/Multiply</DstShader>
+    </ShaderMapping>
+    <ShaderMapping>
+      <SrcShader>Particles/Additive</SrcShader>
+      <DstShader>Particles/Additive</DstShader>
+    </ShaderMapping>
+    <ShaderMapping>
+      <SrcShader>Particles/~Additive-Multiply</SrcShader>
+      <DstShader>Particles/~Additive-Multiply</DstShader>
+    </ShaderMapping>
+    <ShaderMapping>
+      <SrcShader>Particles/Additive (Soft)</SrcShader>
+      <DstShader>Particles/Additive (Soft)</DstShader>
+    </ShaderMapping>
+    <ShaderMapping>
+      <SrcShader>Particles/Alpha Blended</SrcShader>
+      <DstShader>Particles/Alpha Blended</DstShader>
+    </ShaderMapping>
+    <ShaderMapping>
+      <SrcShader>Particles/Blend</SrcShader>
+      <DstShader>Particles/Blend</DstShader>
+    </ShaderMapping>
+    <ShaderMapping>
+      <SrcShader>Particles/Multiply</SrcShader>
+      <DstShader>Particles/Multiply</DstShader>
+    </ShaderMapping>
+    <ShaderMapping>
+      <SrcShader>Particles/Multiply (Double)</SrcShader>
+      <DstShader>Particles/Multiply (Double)</DstShader>
+    </ShaderMapping>
+    <ShaderMapping>
+      <SrcShader>Particles/Alpha Blended Premultiply</SrcShader>
+      <DstShader>Particles/Alpha Blended Premultiply</DstShader>
+    </ShaderMapping>
+    <ShaderMapping>
+      <SrcShader>Particles/VertexLit Blended</SrcShader>
+      <DstShader>Particles/VertexLit Blended</DstShader>
+    </ShaderMapping>
+    <ShaderMapping>
+      <SrcShader>Transparent/Cutout/Soft Edge Unlit</SrcShader>
+      <DstShader>Linear Lighting/Transparent/Cutout/Soft Edge Unlit</DstShader>
+    </ShaderMapping>
+    <ShaderMapping>
+      <SrcShader>Transparent/Diffuse</SrcShader>
+      <DstShader>Linear Lighting/Transparent/Diffuse</DstShader>
+    </ShaderMapping>
+    <ShaderMapping>
+      <SrcShader>Transparent/Bumped Diffuse</SrcShader>
+      <DstShader>Linear Lighting/Transparent/Bumped Diffuse</DstShader>
+    </ShaderMapping>
+    <ShaderMapping>
+      <SrcShader>Transparent/Bumped Specular</SrcShader>
+      <DstShader>Linear Lighting/Transparent/Bumped Specular</DstShader>
+    </ShaderMapping>
+    <ShaderMapping>
+      <SrcShader>Transparent/Specular</SrcShader>
+      <DstShader>Linear Lighting/Transparent/Specular</DstShader>
+    </ShaderMapping>
+    <ShaderMapping>
+      <SrcShader>Transparent/Parallax Diffuse</SrcShader>
+      <DstShader>Linear Lighting/Transparent/Parallax Diffuse</DstShader>
+    </ShaderMapping>
+    <ShaderMapping>
+      <SrcShader>Transparent/Parallax Specular</SrcShader>
+      <DstShader>Linear Lighting/Transparent/Parallax Specular</DstShader>
+    </ShaderMapping>
+    <ShaderMapping>
+      <SrcShader>Transparent/Cutout/Diffuse</SrcShader>
+      <DstShader>Linear Lighting/Transparent/Cutout/Diffuse</DstShader>
+    </ShaderMapping>
+    <ShaderMapping>
+      <SrcShader>Transparent/Cutout/Bumped Diffuse</SrcShader>
+      <DstShader>Linear Lighting/Transparent/Cutout/Bumped Diffuse</DstShader>
+    </ShaderMapping>
+    <ShaderMapping>
+      <SrcShader>Transparent/Cutout/Bumped Specular</SrcShader>
+      <DstShader>Linear Lighting/Transparent/Cutout/Bumped Specular</DstShader>
+    </ShaderMapping>
+    <ShaderMapping>
+      <SrcShader>Transparent/Cutout/Specular</SrcShader>
+      <DstShader>Linear Lighting/Transparent/Cutout/Specular</DstShader>
+    </ShaderMapping>
+    <ShaderMapping>
+      <SrcShader>Diffuse</SrcShader>
+      <DstShader>Linear Lighting/Diffuse</DstShader>
+    </ShaderMapping>
+    <ShaderMapping>
+      <SrcShader>Decal</SrcShader>
+      <DstShader>Linear Lighting/Decal</DstShader>
+    </ShaderMapping>
+    <ShaderMapping>
+      <SrcShader>FX/Flare</SrcShader>
+      <DstShader>Linear Lighting/FX/Flare</DstShader>
+    </ShaderMapping>
+    <ShaderMapping>
+      <SrcShader>Self-Illumin/Diffuse</SrcShader>
+      <DstShader>Linear Lighting/Self-Illumin/Diffuse</DstShader>
+    </ShaderMapping>
+    <ShaderMapping>
+      <SrcShader>Self-Illumin/Bumped Diffuse</SrcShader>
+      <DstShader>Linear Lighting/Self-Illumin/Bumped Diffuse</DstShader>
+    </ShaderMapping>
+    <ShaderMapping>
+      <SrcShader>Self-Illumin/Specular</SrcShader>
+      <DstShader>Linear Lighting/Self-Illumin/Specular</DstShader>
+    </ShaderMapping>
+    <ShaderMapping>
+      <SrcShader>Self-Illumin/Bumped Specular</SrcShader>
+      <DstShader>Linear Lighting/Self-Illumin/Bumped Specular</DstShader>
+    </ShaderMapping>
+    <ShaderMapping>
+      <SrcShader>Self-Illumin/Parallax Diffuse</SrcShader>
+      <DstShader>Linear Lighting/Self-Illumin/Parallax Diffuse</DstShader>
+    </ShaderMapping>
+    <ShaderMapping>
+      <SrcShader>Self-Illumin/Parallax Specular</SrcShader>
+      <DstShader>Linear Lighting/Self-Illumin/Parallax Specular</DstShader>
+    </ShaderMapping>
+    <ShaderMapping>
+      <SrcShader>Legacy Shaders/Lightmapped/Bumped Diffuse</SrcShader>
+      <DstShader>Linear Lighting/Legacy Shaders/Lightmapped/Bumped Diffuse</DstShader>
+    </ShaderMapping>
+    <ShaderMapping>
+      <SrcShader>Legacy Shaders/Lightmapped/Diffuse</SrcShader>
+      <DstShader>Linear Lighting/Legacy Shaders/Lightmapped/Diffuse</DstShader>
+    </ShaderMapping>
+    <ShaderMapping>
+      <SrcShader>Bumped Diffuse</SrcShader>
+      <DstShader>Linear Lighting/Bumped Diffuse</DstShader>
+    </ShaderMapping>
+    <ShaderMapping>
+      <SrcShader>Specular</SrcShader>
+      <DstShader>Linear Lighting/Specular</DstShader>
+    </ShaderMapping>
+    <ShaderMapping>
+      <SrcShader>Bumped Specular</SrcShader>
+      <DstShader>Linear Lighting/Bumped Specular</DstShader>
+    </ShaderMapping>
+    <ShaderMapping>
+      <SrcShader>Diffuse Detail</SrcShader>
+      <DstShader>Linear Lighting/Diffuse Detail</DstShader>
+    </ShaderMapping>
+    <ShaderMapping>
+      <SrcShader>Parallax Diffuse</SrcShader>
+      <DstShader>Linear Lighting/Parallax Diffuse</DstShader>
+    </ShaderMapping>
+    <ShaderMapping>
+      <SrcShader>Parallax Specular</SrcShader>
+      <DstShader>Linear Lighting/Parallax Specular</DstShader>
+    </ShaderMapping>
+    <ShaderMapping>
+      <SrcShader>Reflective/Bumped Diffuse</SrcShader>
+      <DstShader>Linear Lighting/Reflective/Bumped Diffuse</DstShader>
+    </ShaderMapping>
+    <ShaderMapping>
+      <SrcShader>Reflective/Bumped Unlit</SrcShader>
+      <DstShader>Linear Lighting/Reflective/Bumped Unlit</DstShader>
+    </ShaderMapping>
+    <ShaderMapping>
+      <SrcShader>Reflective/Bumped Specular</SrcShader>
+      <DstShader>Linear Lighting/Reflective/Bumped Specular</DstShader>
+    </ShaderMapping>
+    <ShaderMapping>
+      <SrcShader>Reflective/Diffuse</SrcShader>
+      <DstShader>Linear Lighting/Reflective/Diffuse</DstShader>
+    </ShaderMapping>
+    <ShaderMapping>
+      <SrcShader>Reflective/Specular</SrcShader>
+      <DstShader>Linear Lighting/Reflective/Specular</DstShader>
+    </ShaderMapping>
+    <ShaderMapping>
+      <SrcShader>Reflective/Parallax Diffuse</SrcShader>
+      <DstShader>Linear Lighting/Reflective/Parallax Diffuse</DstShader>
+    </ShaderMapping>
+    <ShaderMapping>
+      <SrcShader>Reflective/Parallax Specular</SrcShader>
+      <DstShader>Linear Lighting/Reflective/Parallax Specular</DstShader>
+    </ShaderMapping>
+    <ShaderMapping>
+      <SrcShader>RenderFX/Skybox Cubed</SrcShader>
+      <DstShader>Linear Lighting/RenderFX/Skybox Cubed</DstShader>
+    </ShaderMapping>
+    <ShaderMapping>
+      <SrcShader>RenderFX/Skybox</SrcShader>
+      <DstShader>Linear Lighting/RenderFX/Skybox</DstShader>
+    </ShaderMapping>
+    <ShaderMapping>
+      <SrcShader>Mobile/Bumped Diffuse</SrcShader>
+      <DstShader>Linear Lighting/Mobile/Bumped Diffuse</DstShader>
+    </ShaderMapping>
+    <ShaderMapping>
+      <SrcShader>Mobile/Bumped Specular (1 Directional Light)</SrcShader>
+      <DstShader>Linear Lighting/Mobile/Bumped Specular (1 Directional Light)</DstShader>
+    </ShaderMapping>
+    <ShaderMapping>
+      <SrcShader>Mobile/Bumped Specular</SrcShader>
+      <DstShader>Linear Lighting/Mobile/Bumped Specular</DstShader>
+    </ShaderMapping>
+    <ShaderMapping>
+      <SrcShader>Mobile/Diffuse</SrcShader>
+      <DstShader>Linear Lighting/Mobile/Diffuse</DstShader>
+    </ShaderMapping>
+    <ShaderMapping>
+      <SrcShader>Mobile/VertexLit (Only Directional Lights)</SrcShader>
+      <DstShader>Linear Lighting/Mobile/VertexLit (Only Directional Lights)</DstShader>
+    </ShaderMapping>
+    <ShaderMapping>
+      <SrcShader>Mobile/Transparent/Vertex Color</SrcShader>
+      <DstShader>Linear Lighting/Mobile/Transparent/Vertex Color CG</DstShader>
+    </ShaderMapping>
+    <ShaderMapping>
+      <SrcShader>Sprites/Default</SrcShader>
+      <DstShader>Linear Lighting/Sprites/Default</DstShader>
+    </ShaderMapping>
+    <ShaderMapping>
+      <SrcShader>Sprites/Diffuse</SrcShader>
+      <DstShader>Linear Lighting/Sprites/Diffuse</DstShader>
+    </ShaderMapping>
+    <ShaderMapping>
+      <SrcShader>Unlit/Transparent</SrcShader>
+      <DstShader>Linear Lighting/Unlit/Transparent</DstShader>
+    </ShaderMapping>
+    <ShaderMapping>
+      <SrcShader>Unlit/Transparent Cutout</SrcShader>
+      <DstShader>Linear Lighting/Unlit/Transparent Cutout</DstShader>
+    </ShaderMapping>
+    <ShaderMapping>
+      <SrcShader>Unlit/Texture</SrcShader>
+      <DstShader>Linear Lighting/Unlit/Texture</DstShader>
+    </ShaderMapping>
+  </ShadersMapping>
+</ShadersMapper>

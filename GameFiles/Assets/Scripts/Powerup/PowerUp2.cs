@@ -13,6 +13,7 @@ public class PowerUp2 : PowerUpBaseScript {
 		transform.localPosition=Vector3.zero;
 	}
 	public override void getHit(){
+		print("GotHit");
 		health--;
 		Color c=gameObject.renderer.material.GetColor("_TintColor");
 		c.a=(float)health/(float)maxhealth;

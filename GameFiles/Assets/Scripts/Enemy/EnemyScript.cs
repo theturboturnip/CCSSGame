@@ -7,7 +7,6 @@ public class EnemyScript : MonoBehaviour {
     bool isDead=false;
     ScoreHandlerScript scoreHandler;
     public int health=1,p_id=0;
-    public Texture2D hover_img;
     public float dropChance=2.0f;
 	void Start () {
 		scoreHandler=GameObject.Find("Handlers/ScoreHandler").GetComponent<ScoreHandlerScript>();
@@ -35,7 +34,6 @@ public class EnemyScript : MonoBehaviour {
 			Transform g=Instantiate(powerup,transform.position,Quaternion.identity) as Transform;
 			PowerUpItemScript p=g.gameObject.GetComponent<PowerUpItemScript>();
 			p.id=p_id;
-			print(p.id);
 		}
 	    float multiplier=0.1f;
 	    int worth=1;	    

@@ -13,7 +13,7 @@ GameObject:
   - 135: {fileID: 13500000}
   - 114: {fileID: 11400002}
   - 82: {fileID: 8200000}
-  m_Layer: 10
+  m_Layer: 2
   m_Name: BulletExplosion
   m_TagString: Explosion
   m_Icon: {fileID: 0}

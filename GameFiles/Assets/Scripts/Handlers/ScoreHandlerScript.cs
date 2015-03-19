@@ -28,9 +28,13 @@ public class ScoreHandlerScript : MonoBehaviour {
         if(Input.GetButton("Quit")||player.health==0){
             Game.current.score=totalScoreGoal+(additiveScore*multiplier);
             SaveLoad.Save();
-            Application.LoadLevel(1);
+            MessageHandler.TellPlayer("You have died!",false,Quit);
+            
         }
 	}
+    void Quit(){
+        Application.LoadLevel(1);
+    }
     public void EnemyDestroyed(int value,float toAddToMultiplier){
          if(multiplier==0&&toAddToMultiplier!=0) multiplier=1;
          else multiplier+=toAddToMultiplier;

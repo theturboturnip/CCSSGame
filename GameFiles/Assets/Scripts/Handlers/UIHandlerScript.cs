@@ -17,6 +17,7 @@ public class UIHandlerScript : MonoBehaviour {
 				   TotalScoreObject=GameObject.Find("Handlers/UIHandler/Canvas/ScorePanel/Total"),	
 				   AdditiveScoreObject=GameObject.Find("Handlers/UIHandler/Canvas/ScorePanel/Additive"),
 				   HealthObject=GameObject.Find("Handlers/UIHandler/Canvas/HealthPanel/Panel");
+
 		Player=GameObject.Find("Player").GetComponent<MovementScript>();
 		scoreHandler=ScoreHandlerObject.GetComponent<ScoreHandlerScript>();
 		additive=AdditiveScoreObject.GetComponent<Text>();
@@ -24,6 +25,7 @@ public class UIHandlerScript : MonoBehaviour {
 		health=HealthObject.GetComponent<BorgHealth>();
 		maxHealth=Player.health;
 		CurrentCursor=Idle;
+		//TellPlayer("This is a confirmation.",true);
 	}
 	void CursorTick(){
 		currentCursorIndex+=Time.deltaTime*4;
@@ -45,6 +47,7 @@ public class UIHandlerScript : MonoBehaviour {
 			currentCursorIndex=0.0f;
 		}
 		Cursor.SetCursor(CurrentCursor[(int)currentCursorIndex],new Vector2(16,16),CursorMode.Auto);
+
 	}
 	// Update is called once per frame
 	void Update () {
@@ -55,7 +58,11 @@ public class UIHandlerScript : MonoBehaviour {
 		health.SetHealth((float)Player.health/(float)maxHealth);
 		//if(Input.GetMouseButtonDown(0))
 		CursorTick();
+		if(Input.GetKeyDown(KeyCode.P)){
+			Time.timeScale=1-Time.timeScale;	
+		}
 	}
+	
 	string setLength(string toMod,int bits){
 		if (toMod.Length>=bits){
 			return toMod.Substring(toMod.Length-bits);
@@ -65,4 +72,5 @@ public class UIHandlerScript : MonoBehaviour {
 		}
 		return toMod;
 	}
+	
 }

@@ -2,32 +2,31 @@ using UnityEngine;
 using System.Collections;
 
 public class MovementScript : MonoBehaviour {
-    public Transform bullet,explosion;
+    public Transform explosion;
     public bool isDead;
     public float playerSpeed;
     public int health=10;
     GameObject pHolder;
     ScoreHandlerScript scoreHandler;
     public Transform[] powerups;
-    public Texture2D hover_img;
 
     void Start () {
         SaveLoad.Load();
-        if(!Game.current.upgrades[0].enabled){
-            GameObject.Find("Player/BulletSpawnRight").SetActive(false);
-            GameObject.Find("Player/BulletSpawnLeft").SetActive(false);
-        }
+        //GameObject.Find("Player/BulletSpawners/BulletSpawnRight").SetActive(Game.current.upgrades[0].enabled);
+        //GameObject.Find("Player/BulletSpawners/BulletSpawnLeft").SetActive(Game.current.upgrades[0].enabled);
         scoreHandler=GameObject.Find("Handlers/ScoreHandler").GetComponent<ScoreHandlerScript>();
         pHolder=GameObject.Find("Player/PowerupSlot");
     }
 
 	void Update () {
-	    moveIfRequired();
-        shootIfRequired();
-        rigidbody.velocity=Vector3.zero;
-        if (isDead){
-            isDead=false;
-            health=10;
+        if(Time.timeScale>0.0f){
+	       moveIfRequired();
+            shootIfRequired();
+            rigidbody.velocity=Vector3.zero;
+            if (isDead){
+                isDead=false;
+                health=10;
+            }
         }
         if (Input.GetKey(KeyCode.Escape)){
             Application.Quit();

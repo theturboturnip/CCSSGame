@@ -304,9 +304,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 400000, guid: 27ff889f9d767bc4495b5685d0889dc7, type: 2}
   powerup: {fileID: 400002, guid: 72cad4c00f4f34811b279f7032b8461f, type: 2}
-  health: 1
+  health: 4
   p_id: 2
-  hover_img: {fileID: 2800000, guid: fb1ad5f24e43d4f41a776d66e436fd87, type: 3}
   dropChance: 3
 --- !u!114 &11400010
 MonoBehaviour:
@@ -352,7 +351,7 @@ SphereCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100006}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: .5

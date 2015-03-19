@@ -4,7 +4,7 @@ using System.Collections;
 public class BulletScript : MonoBehaviour {
 	public Transform startExplosion,endExplosion;
 	public GameObject Shooter;
-	public float ticks=100;
+	public float lifeSpan=5.0f;
     GameObject model;
     Vector3 direction;
     LineRenderer line;
@@ -23,8 +23,8 @@ public class BulletScript : MonoBehaviour {
 	}
 
 	void Update () {
-		ticks--;
-		if(ticks<=0) End(0,Vector3.zero);
+		lifeSpan-=Time.deltaTime;
+		if(lifeSpan<=0.0f) End(0,Vector3.zero);
 		transform.Translate(direction*Time.deltaTime,Space.World);
 		Ray ray=new Ray(transform.position,transform.forward);
 		Vector3 start=ray.GetPoint(0f),end=ray.GetPoint(2f);
